@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PhysioCare - Mockup</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1>PhysioCare</h1>
+    <p>Monitorizarea ședințelor de tratament și a pacienților clinicii.</p>
+    <p class="app-count">3 ședințe, dintre care 2 active</p>
+  </header>
+
+  <main class="container">
+    <section class="panel">
+      <h2>Adaugă ședință</h2>
+      <form class="item-form">
+        <label>
+          Pacient & Obiectiv
+          <input type="text" name="titlu" placeholder="Ex: Kinetoterapie - Recuperare genunchi" required />
+        </label>
+        
+        <label>
+          Tip procedură
+          <select name="eticheta">
+            <option value="laser">Laser</option>
+            <option value="tecar">Tecar</option>
+            <option value="kineto">Kineto</option>
+          </select>
+        </label>
+
+        <button type="submit">Adaugă ședință</button>
+      </form>
+    </section>
+
+    <section class="panel">
+      <h2>Programări active</h2>
+      <!-- Când lista e goală: <p class="empty">Nu există nicio ședință programată.</p> -->
+      <ul class="item-list">
+        <li class="item-card">
+          <div class="card-details">
+            <h3>Kinetoterapie - Recuperare ligament</h3>
+            <span class="badge badge-kineto">Kineto</span>
+          </div>
+          <span class="status">Activ</span>
+        </li>
+
+        <li class="item-card done">
+          <div class="card-details">
+            <h3>Terapie Laser - Dureri lombare</h3>
+            <span class="badge badge-laser">Laser</span>
+          </div>
+          <span class="status">Finalizat</span>
+        </li>
+
+        <li class="item-card">
+          <div class="card-details">
+            <h3>Terapie Tecar - Tendinită umăr</h3>
+            <span class="badge badge-tecar">Tecar</span>
+          </div>
+          <span class="status">Activ</span>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    Proiect Tehnologii Web &bull; Clinica de Fizioterapie
+  </footer>
+</body>
+</html>
