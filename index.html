@@ -8,13 +8,23 @@
 </head>
 <body>
   <header class="app-header">
-    <h1>PhysioCare</h1>
-    <p>Monitorizarea ședințelor de tratament și a pacienților clinicii.</p>
-    <p class="app-count">3 ședințe, dintre care 2 active</p>
+    <div class="header-inner">
+      <div class="brand">
+        <span class="brand-cross">+</span>
+        <div class="brand-text">
+          <h1>TopFizioKinetic</h1>
+          <p class="brand-subtitle">Clinică de Recuperare & Fizioterapie</p>
+        </div>
+      </div>
+      <div class="header-meta">
+        <p class="app-desc">Monitorizarea ședințelor de tratament</p>
+        <span class="app-count">3 ședințe &bull; 2 active</span>
+      </div>
+    </div>
   </header>
 
   <main class="container">
-    <section class="panel">
+    <section class="panel panel-form">
       <h2>Adaugă ședință</h2>
       <form class="item-form">
         <label>
@@ -37,7 +47,6 @@
 
     <section class="panel">
       <h2>Programări active</h2>
-      <!-- Când lista e goală: <p class="empty">Nu există nicio ședință programată.</p> -->
       <ul class="item-list">
         <li class="item-card">
           <div class="card-details">
@@ -63,6 +72,41 @@
           <span class="status">Activ</span>
         </li>
       </ul>
+    </section>
+
+    <section class="panel">
+      <h2>Echipamente & Tehnologii</h2>
+      <div class="equipment-grid">
+        <article class="equipment-card">
+          <div class="equipment-header">
+            <span class="equipment-tag tag-kineto">Kinetoterapie</span>
+            <h3>Sistem Kineto & Recuperare</h3>
+          </div>
+          <p class="equipment-text">
+            Ansamblu complet format din spalier anatomic, benzi elastice de rezistență variabilă și plăci de propriocepție. Asigură recăpătarea mobilității articulare, tonifierea musculară controlată și reeducarea posturală.
+          </p>
+        </article>
+
+        <article class="equipment-card">
+          <div class="equipment-header">
+            <span class="equipment-tag tag-laser">Fizioterapie</span>
+            <h3>Laser Terapeutic HILT</h3>
+          </div>
+          <p class="equipment-text">
+            Sistem laser de înaltă intensitate care penetrează în profunzimea țesutului. Stimulează regenerarea celulară rapidă, reduce inflamațiile acute și are un puternic efect analgezic pentru dureri cronice de coloană sau articulații.
+          </p>
+        </article>
+
+        <article class="equipment-card">
+          <div class="equipment-header">
+            <span class="equipment-tag tag-tecar">Termoterapie</span>
+            <h3>Aparat Diatermie Tecar</h3>
+          </div>
+          <p class="equipment-text">
+            Tehnologie de transfer energetic capacitiv și rezistiv ce generează căldură endogenă controlată. Accelerează vascularizația locală, relaxează spasmele musculare profunde și scurtează durata de recuperare în tendinite și rupturi musculare.
+          </p>
+        </article>
+      </div>
     </section>
   </main>
 
