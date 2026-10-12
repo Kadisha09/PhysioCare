@@ -3,23 +3,122 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>PhysioCare - Mockup</title>
+  <title>TopFizioKinetic - mockup</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="pin" viewBox="0 0 20 40">
+        <path d="M10 0 L17 15 H13 L19 28 H11 V40 H9 V28 H1 L7 15 H3Z" style="fill:var(--pine)"/>
+      </symbol>
+
+      <!-- mașină de off-road 4x4 -->
+      <symbol id="jeep" viewBox="0 0 120 60">
+        <path d="M22 28 L33 9 H84 L95 28Z" style="fill:var(--car)"/>
+        <rect x="8" y="26" width="104" height="18" rx="5" style="fill:var(--car)"/>
+        <path d="M33 25 L40 13 H58 V25Z M62 13 H81 L88 25 H62Z" style="fill:var(--glass-win)"/>
+        <path d="M38 6 H80" stroke-width="3" stroke-linecap="round" style="stroke:var(--rack)"/>
+        <circle cx="6" cy="34" r="8" style="fill:var(--tire)"/>
+        <circle cx="111" cy="33" r="3" fill="#ffe9a8"/>
+        <circle cx="30" cy="46" r="13" style="fill:var(--tire)"/><circle cx="30" cy="46" r="11" fill="none" stroke-width="3" stroke-dasharray="4 4" style="stroke:var(--hub)"/><circle cx="30" cy="46" r="4.5" style="fill:var(--hub)"/>
+        <circle cx="90" cy="46" r="13" style="fill:var(--tire)"/><circle cx="90" cy="46" r="11" fill="none" stroke-width="3" stroke-dasharray="4 4" style="stroke:var(--hub)"/><circle cx="90" cy="46" r="4.5" style="fill:var(--hub)"/>
+      </symbol>
+
+      <!-- pictograme pentru cele trei tipuri de terapie -->
+      <symbol id="i-labuta" viewBox="0 0 40 40">
+        <ellipse cx="20" cy="27" rx="10" ry="8.5" fill="currentColor"/>
+        <ellipse cx="8" cy="16" rx="4" ry="5.5" transform="rotate(-18 8 16)" fill="currentColor"/>
+        <ellipse cx="16" cy="9" rx="4" ry="5.5" fill="currentColor"/>
+        <ellipse cx="24" cy="9" rx="4" ry="5.5" fill="currentColor"/>
+        <ellipse cx="32" cy="16" rx="4" ry="5.5" transform="rotate(18 32 16)" fill="currentColor"/>
+      </symbol>
+      <symbol id="i-baraj" viewBox="0 0 40 40">
+        <path d="M3 9 Q20 2 37 9 L39 36 Q20 41 1 36Z" fill="currentColor"/>
+        <path d="M23 11 L13 24 H20 L17 35 L28 20 H21Z" style="fill:var(--disc)"/>
+      </symbol>
+      <symbol id="i-vulpe" viewBox="0 0 40 40">
+        <path d="M4 6 L14 12 H26 L36 6 C37 20 31 32 20 37 C9 32 3 20 4 6Z" fill="currentColor"/>
+        <path d="M12 26 C15 31 18 34 20 35 C22 34 25 31 28 26 C24 29 16 29 12 26Z" style="fill:var(--disc)"/>
+        <circle cx="20" cy="33" r="2" fill="#1c1f22"/>
+        <circle cx="14" cy="21" r="1.8" style="fill:var(--disc)"/><circle cx="26" cy="21" r="1.8" style="fill:var(--disc)"/>
+      </symbol>
+
+      <!-- vulpe, ilustrație -->
+      <symbol id="vulpe" viewBox="0 0 120 92">
+        <path d="M78 86 C114 90 120 54 100 38 C106 62 94 74 74 76Z" style="fill:var(--fox)"/>
+        <path d="M100 38 C109 47 113 60 109 73 C106 61 102 49 100 38Z" fill="#fff"/>
+        <path d="M32 92 C30 72 40 62 55 62 C70 62 80 72 78 92Z" style="fill:var(--fox)"/>
+        <path d="M46 92 C48 76 52 66 55 63 C58 66 62 76 64 92Z" fill="#fff"/>
+        <path d="M26 30 L36 5 L50 24 H60 L74 5 L84 30 C84 50 70 62 55 64 C40 62 26 50 26 30Z" style="fill:var(--fox)"/>
+        <path d="M26 38 C34 44 44 56 55 64 C40 62 28 52 26 38Z M84 38 C76 44 66 56 55 64 C70 62 82 52 84 38Z" fill="#fff"/>
+        <path d="M41 36 L49 40 M69 36 L61 40" stroke-width="3" stroke-linecap="round" style="stroke:var(--fox-dark)"/>
+        <ellipse cx="55" cy="61" rx="4.5" ry="3.2" style="fill:var(--fox-dark)"/>
+      </symbol>
+
+      <!-- urs brun -->
+      <symbol id="urs" viewBox="0 0 200 200">
+        <ellipse cx="100" cy="142" rx="62" ry="52" style="fill:var(--bear)"/>
+        <ellipse cx="100" cy="154" rx="34" ry="32" style="fill:var(--bear-light)" opacity=".5"/>
+        <ellipse cx="46" cy="142" rx="15" ry="32" transform="rotate(14 46 142)" style="fill:var(--bear)"/>
+        <ellipse cx="154" cy="142" rx="15" ry="32" transform="rotate(-14 154 142)" style="fill:var(--bear)"/>
+        <ellipse cx="68" cy="190" rx="25" ry="9" style="fill:var(--bear-dark)"/>
+        <ellipse cx="132" cy="190" rx="25" ry="9" style="fill:var(--bear-dark)"/>
+        <circle cx="64" cy="44" r="15" style="fill:var(--bear)"/><circle cx="136" cy="44" r="15" style="fill:var(--bear)"/>
+        <circle cx="64" cy="46" r="7" style="fill:var(--muzzle)"/><circle cx="136" cy="46" r="7" style="fill:var(--muzzle)"/>
+        <circle cx="100" cy="80" r="43" style="fill:var(--bear)"/>
+        <ellipse cx="100" cy="97" rx="20" ry="15" style="fill:var(--muzzle)"/>
+        <ellipse cx="100" cy="89" rx="8" ry="5.5" fill="#1b110c"/>
+        <path d="M100 95 V101 M92 104 Q100 110 108 104" stroke="#1b110c" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+        <g class="ochi"><circle cx="81" cy="72" r="4.2" fill="#1b110c"/><circle cx="119" cy="72" r="4.2" fill="#1b110c"/></g>
+      </symbol>
+
+      <pattern id="cad" width="8" height="16" patternUnits="userSpaceOnUse"><path d="M2 0 V16 M6 4 V14" stroke="#fff" stroke-opacity=".6" stroke-width="2"/></pattern>
+      <clipPath id="cp"><rect x="626" y="218" width="30" height="114"/></clipPath>
+      <linearGradient id="cet" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-opacity="0" style="stop-color:var(--fog)"/><stop offset=".45" stop-opacity=".9" style="stop-color:var(--fog)"/><stop offset="1" stop-opacity=".6" style="stop-color:var(--fog)"/>
+      </linearGradient>
+    </defs>
+  </svg>
+
   <header class="app-header">
-    <div class="header-inner">
-      <div class="brand">
-        <span class="brand-cross">+</span>
-        <div class="brand-text">
-          <h1>TopFizioKinetic</h1>
-          <p class="brand-subtitle">Clinică de Recuperare & Fizioterapie</p>
-        </div>
-      </div>
-      <div class="header-meta">
-        <p class="app-desc">Monitorizarea ședințelor de tratament</p>
-        <span class="app-count">3 ședințe &bull; 2 active</span>
-      </div>
+    <input type="checkbox" id="ceata" class="mode-input" />
+    <label for="ceata" class="mode-label" title="Schimbă vremea: senin sau ceață"></label>
+
+    <!-- Transfăgărășan: barajul Vidraru, serpentinele, ursul, vulpea -->
+    <svg class="scene" viewBox="0 0 1000 380" preserveAspectRatio="xMidYMax slice" role="img" aria-label="Transfăgărășan: barajul Vidraru, serpentinele, un urs brun și o vulpe">
+      <circle cx="860" cy="70" r="26" style="fill:var(--sun)" opacity=".9"/>
+      <path d="M0 230 L80 150 L130 185 L220 108 L300 190 L380 140 L470 200 L560 118 L650 190 L760 98 L850 170 L930 130 L1000 180 V380H0Z" style="fill:var(--far)"/>
+      <path d="M0 285 L100 212 L190 252 L300 192 L420 262 L520 200 L600 250 L1000 240 V380H0Z" style="fill:var(--mid)"/>
+      <path d="M170 306 C260 238 420 226 566 224 V312 H170Z" style="fill:var(--lake)"/>
+      <path d="M740 380 L800 190 L860 140 L920 100 L1000 90 V380Z" style="fill:var(--mid2)"/>
+      <!-- serpentinele -->
+      <path d="M1000 352 L790 330 L975 296 L795 262 L960 228 L810 196 L930 166" fill="none" stroke-width="9" stroke-linejoin="round" style="stroke:var(--asfalt)"/>
+      <path d="M1000 352 L790 330 L975 296 L795 262 L960 228 L810 196 L930 166" fill="none" stroke-width="1.2" stroke-dasharray="5 7" stroke-linejoin="round" style="stroke:var(--lane)"/>
+      <!-- mașina de off-road pe drum -->
+      <use href="#jeep" x="862" y="297" width="38" height="19" transform="rotate(-10 881 314)"/>
+      <!-- barajul Vidraru -->
+      <path d="M514 204 L566 208 L572 332 L496 332Z" style="fill:var(--rock)"/>
+      <path d="M718 208 L784 192 L806 332 L714 332Z" style="fill:var(--rock)"/>
+      <path d="M566 216 Q641 196 716 216 L726 332 Q641 352 558 332Z" style="fill:var(--concrete)"/>
+      <g fill="none" stroke-width="1.2" style="stroke:var(--concrete-dark)" opacity=".5"><path d="M562 256 Q641 236 722 256 M560 294 Q641 274 724 294 M600 210 L596 340 M686 210 L690 340"/></g>
+      <path d="M566 216 Q641 196 716 216" fill="none" stroke-width="4" style="stroke:var(--concrete-dark)"/>
+      <rect x="626" y="218" width="30" height="114" style="fill:var(--spill)"/>
+      <g clip-path="url(#cp)"><rect class="cad" x="626" y="202" width="30" height="146" fill="url(#cad)"/></g>
+      <ellipse class="ceata-baraj" cx="641" cy="336" rx="46" ry="9" fill="#fff" opacity=".6"/>
+      <path d="M470 334 L820 334 V356 H470Z" style="fill:var(--lake-dark)"/>
+      <path d="M0 342 C200 318 420 350 640 338 C820 326 920 352 1000 342 V380H0Z" style="fill:var(--ground)"/>
+      <use href="#pin" x="250" y="300" width="20" height="40"/><use href="#pin" x="276" y="308" width="16" height="32"/>
+      <use href="#pin" x="742" y="302" width="20" height="40"/>
+      <use href="#vulpe" x="404" y="298" width="86" height="66"/>
+      <use href="#urs" x="14" y="150" width="220" height="220"/>
+      <g class="fog"><rect x="0" y="130" width="1000" height="250" fill="url(#cet)"/></g>
+    </svg>
+
+    <div class="header-text">
+      <h1>TopFizioKinetic</h1>
+      <p class="tagline">Recuperare cu răbdare de munte și pas sigur.</p>
+      <p class="app-count">3 ședințe, dintre care 2 programate</p>
     </div>
   </header>
 
@@ -28,90 +127,60 @@
       <h2>Adaugă ședință</h2>
       <form class="item-form">
         <label>
-          Pacient & Obiectiv
-          <input type="text" name="titlu" placeholder="Ex: Kinetoterapie - Recuperare genunchi" required />
+          Titlu ședință
+          <input type="text" name="titlu" maxlength="100" placeholder="Ex: Recuperare post-entorsă gleznă" />
         </label>
-        
         <label>
-          Tip procedură
-          <select name="eticheta">
-            <option value="laser">Laser</option>
-            <option value="tecar">Tecar</option>
-            <option value="kineto">Kineto</option>
+          Tip terapie
+          <select name="tip">
+            <option value="kinetoterapie">Kinetoterapie</option>
+            <option value="electroterapie">Electroterapie</option>
+            <option value="masaj">Masaj terapeutic</option>
           </select>
         </label>
-
-        <button type="submit">Adaugă ședință</button>
+        <button type="submit">Adaugă</button>
       </form>
     </section>
 
-    <section class="panel">
-      <h2>Programări active</h2>
+    <section class="panel panel-list">
+      <h2>Ședințele mele</h2>
+      <!-- Când lista e goală: <p class="empty">Nu există nicio ședință.</p> -->
       <ul class="item-list">
-        <li class="item-card">
-          <div class="card-details">
-            <h3>Kinetoterapie - Recuperare ligament</h3>
-            <span class="badge badge-kineto">Kineto</span>
+        <li class="item-card t-kineto">
+          <div class="item-info">
+            <span class="disc"><svg aria-hidden="true"><use href="#i-labuta"/></svg></span>
+            <div>
+              <h3>Recuperare post-entorsă gleznă</h3>
+              <span class="badge badge-kinetoterapie">Kinetoterapie</span>
+            </div>
           </div>
-          <span class="status">Activ</span>
+          <span class="status">Programată</span>
         </li>
-
-        <li class="item-card done">
-          <div class="card-details">
-            <h3>Terapie Laser - Dureri lombare</h3>
-            <span class="badge badge-laser">Laser</span>
+        <li class="item-card t-masaj done">
+          <div class="item-info">
+            <span class="disc"><svg aria-hidden="true"><use href="#i-vulpe"/></svg></span>
+            <div>
+              <h3>Masaj terapeutic zona cervicală</h3>
+              <span class="badge badge-masaj">Masaj terapeutic</span>
+            </div>
           </div>
-          <span class="status">Finalizat</span>
+          <span class="status">Efectuată</span>
         </li>
-
-        <li class="item-card">
-          <div class="card-details">
-            <h3>Terapie Tecar - Tendinită umăr</h3>
-            <span class="badge badge-tecar">Tecar</span>
+        <li class="item-card t-electro">
+          <div class="item-info">
+            <span class="disc"><svg aria-hidden="true"><use href="#i-baraj"/></svg></span>
+            <div>
+              <h3>Electroterapie lombară</h3>
+              <span class="badge badge-electroterapie">Electroterapie</span>
+            </div>
           </div>
-          <span class="status">Activ</span>
+          <span class="status">Programată</span>
         </li>
       </ul>
     </section>
-
-    <section class="panel">
-      <h2>Echipamente & Tehnologii</h2>
-      <div class="equipment-grid">
-        <article class="equipment-card">
-          <div class="equipment-header">
-            <span class="equipment-tag tag-kineto">Kinetoterapie</span>
-            <h3>Sistem Kineto & Recuperare</h3>
-          </div>
-          <p class="equipment-text">
-            Ansamblu complet format din spalier anatomic, benzi elastice de rezistență variabilă și plăci de propriocepție. Asigură recăpătarea mobilității articulare, tonifierea musculară controlată și reeducarea posturală.
-          </p>
-        </article>
-
-        <article class="equipment-card">
-          <div class="equipment-header">
-            <span class="equipment-tag tag-laser">Fizioterapie</span>
-            <h3>Laser Terapeutic HILT</h3>
-          </div>
-          <p class="equipment-text">
-            Sistem laser de înaltă intensitate care penetrează în profunzimea țesutului. Stimulează regenerarea celulară rapidă, reduce inflamațiile acute și are un puternic efect analgezic pentru dureri cronice de coloană sau articulații.
-          </p>
-        </article>
-
-        <article class="equipment-card">
-          <div class="equipment-header">
-            <span class="equipment-tag tag-tecar">Termoterapie</span>
-            <h3>Aparat Diatermie Tecar</h3>
-          </div>
-          <p class="equipment-text">
-            Tehnologie de transfer energetic capacitiv și rezistiv ce generează căldură endogenă controlată. Accelerează vascularizația locală, relaxează spasmele musculare profunde și scurtează durata de recuperare în tendinite și rupturi musculare.
-          </p>
-        </article>
-      </div>
-    </section>
   </main>
 
-  <footer class="app-footer">
-    Proiect Tehnologii Web &bull; Clinica de Fizioterapie
-  </footer>
+  <footer class="app-footer">Proiect Tehnologii Web</footer>
+  <script src="sedinte.js"></script>
 </body>
 </html>
