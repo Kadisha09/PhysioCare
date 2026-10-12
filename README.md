@@ -50,3 +50,16 @@ that read and change it. Results are printed in the browser console (F12).
 | S1-R6 | 2 columns on desktop, 1 under 700px | https://github.com/Kadisha09/PhysioCare/blob/26259ef0f0e129116d34046f97a10cb4d2596f6f/style.css#L171-L175 | resize < 700px |
 | S1-R7 | visible focus, readable dark theme | https://github.com/Kadisha09/PhysioCare/blob/26259ef0f0e129116d34046f97a10cb4d2596f6f/style.css#L177-L191 | Tab; dark mode |
 | S1-R8 | commit "Stage 1" pushed | https://github.com/Kadisha09/PhysioCare/commit/26259ef0f0e129116d34046f97a10cb4d2596f6f | commit history |
+
+
+### Verification table 2
+
+| ID | Requirement | Where (permalink) | How to check |
+| :--- | :--- | :--- | :--- |
+| S2-R1 | JS file linked, logs on page load | https://github.com/Kadisha09/PhysioCare/blob/15a2ec7a3c09587223bb7c990b3be345d3f2764d/index.html#L217 | open page, F12 |
+| S2-R2 | 3+ items with id, name, state, tag | https://github.com/Kadisha09/PhysioCare/blob/15a2ec7a3c09587223bb7c990b3be345d3f2764d/sedinte.js#L4-L8 | read |
+| S2-R3 | list, count, search, add, toggle, delete | https://github.com/Kadisha09/PhysioCare/blob/15a2ec7a3c09587223bb7c990b3be345d3f2764d/sedinte.js#L12-L57| console output |
+| S2-R4 | add rejects empty name and invalid tag | https://github.com/Kadisha09/PhysioCare/blob/15a2ec7a3c09587223bb7c990b3be345d3f2764d/sedinte.js#L37-L44 | last 2 console lines |
+| S2-R5 | original array unchanged after add | https://github.com/Kadisha09/PhysioCare/blob/15a2ec7a3c09587223bb7c990b3be345d3f2764d/sedinte.js#L68| console line |
+| S2-R6 | README Stage 2 section + AI log |https://github.com/Kadisha09/PhysioCare/blob/51af01791ac942a4e8e1794f2df64f1a307498f1/README.md?plain=1#L32-L39 | https://github.com/Kadisha09/PhysioCare/blob/51af01791ac942a4e8e1794f2df64f1a307498f1/ai-log/etapa-02.md?plain=1#L1-L28 | read |
+| S2-R7 | commit “Stage 2” pushed | https://github.com/Kadisha09/PhysioCare/commit/15a2ec7a3c09587223bb7c990b3be345d3f2764d | commit history |
