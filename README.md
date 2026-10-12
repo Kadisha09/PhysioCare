@@ -33,10 +33,20 @@ Open `index.html` directly in any modern web browser. No build step, no server r
 Plain JavaScript, no DOM. `sedinte.js` holds the array and the functions
 that read and change it. Results are printed in the browser console (F12).
 
+## Stage 3: Vite and React project
+The app now lives in `frontend/`, built with Vite. The data from stage 2 moved into the main component; the list is still printed raw.
+
+## How to run
+cd frontend
+npm install
+npm run dev
+Then open the address printed in the terminal (http://localhost:5173/).
+
 ## Status
 - [x] Stage 1: static mockup
 - [x] Stage 2: data logic in JavaScript
-- [ ] Stage 3: Vite and React project
+- [x] Stage 3: Vite and React project
+- [ ] Stage 4: Components and props
 
 ## Verification table
 
@@ -52,7 +62,7 @@ that read and change it. Results are printed in the browser console (F12).
 | S1-R8 | commit "Stage 1" pushed | https://github.com/Kadisha09/PhysioCare/commit/26259ef0f0e129116d34046f97a10cb4d2596f6f | commit history |
 
 
-### Verification table 2
+## Verification table 2
 
 | ID | Requirement | Where (permalink) | How to check |
 | :--- | :--- | :--- | :--- |
@@ -61,5 +71,5 @@ that read and change it. Results are printed in the browser console (F12).
 | S2-R3 | list, count, search, add, toggle, delete | https://github.com/Kadisha09/PhysioCare/blob/15a2ec7a3c09587223bb7c990b3be345d3f2764d/sedinte.js#L12-L57| console output |
 | S2-R4 | add rejects empty name and invalid tag | https://github.com/Kadisha09/PhysioCare/blob/15a2ec7a3c09587223bb7c990b3be345d3f2764d/sedinte.js#L37-L44 | last 2 console lines |
 | S2-R5 | original array unchanged after add | https://github.com/Kadisha09/PhysioCare/blob/15a2ec7a3c09587223bb7c990b3be345d3f2764d/sedinte.js#L68| console line |
-| S2-R6 | README Stage 2 section + AI log |https://github.com/Kadisha09/PhysioCare/blob/51af01791ac942a4e8e1794f2df64f1a307498f1/README.md?plain=1#L32-L39 | https://github.com/Kadisha09/PhysioCare/blob/51af01791ac942a4e8e1794f2df64f1a307498f1/ai-log/etapa-02.md?plain=1#L1-L28 | read |
+| S2-R6 | README Stage 2 section + AI log |https://github.com/Kadisha09/PhysioCare/blob/51af01791ac942a4e8e1794f2df64f1a307498f1/README.md?plain=1#L32git status-L39 | https://github.com/Kadisha09/PhysioCare/blob/51af01791ac942a4e8e1794f2df64f1a307498f1/ai-log/etapa-02.md?plain=1#L1-L28 | read |
 | S2-R7 | commit “Stage 2” pushed | https://github.com/Kadisha09/PhysioCare/commit/15a2ec7a3c09587223bb7c990b3be345d3f2764d | commit history |
