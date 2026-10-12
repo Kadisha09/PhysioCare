@@ -73,3 +73,16 @@ Then open the address printed in the terminal (http://localhost:5173/).
 | S2-R5 | original array unchanged after add | https://github.com/Kadisha09/PhysioCare/blob/15a2ec7a3c09587223bb7c990b3be345d3f2764d/sedinte.js#L68| console line |
 | S2-R6 | README Stage 2 section + AI log |https://github.com/Kadisha09/PhysioCare/blob/51af01791ac942a4e8e1794f2df64f1a307498f1/README.md?plain=1#L32git status-L39 | https://github.com/Kadisha09/PhysioCare/blob/51af01791ac942a4e8e1794f2df64f1a307498f1/ai-log/etapa-02.md?plain=1#L1-L28 | read |
 | S2-R7 | commit “Stage 2” pushed | https://github.com/Kadisha09/PhysioCare/commit/15a2ec7a3c09587223bb7c990b3be345d3f2764d | commit history |
+
+
+
+## Verification table 3
+| ID | Requirement | Where (permalink) | How to check |
+|---|---|---|---|
+| S3-R1 | npm run dev starts without errors | [frontend/package.json]https://github.com/Kadisha09/PhysioCare/blob/c92198820f58ab30d9eb169814ae574f11b848ef/frontend/package.json#L1-L27 | npm install, npm run dev |
+| S3-R2 | app name and counter computed from data | [frontend/src/App.jsx#L153-L164] https://github.com/Kadisha09/PhysioCare/blob/c92198820f58ab30d9eb169814ae574f11b848ef/frontend/src/App.jsx#L153-L164| edit data, save |
+| S3-R3 | data from README, not from the example | [frontend/src/App.jsx#L1-L5]https://github.com/Kadisha09/PhysioCare/blob/c92198820f58ab30d9eb169814ae574f11b848ef/frontend/src/App.jsx#L1-L5 | compare with README |
+| S3-R4 | stage 1 styles reused | [frontend/src/App.css] https://github.com/Kadisha09/PhysioCare/blob/c92198820f58ab30d9eb169814ae574f11b848ef/frontend/src/App.css | look at the page |
+| S3-R5 | node_modules ignored, build passes | [frontend/.gitignore]https://github.com/Kadisha09/PhysioCare/blob/c92198820f58ab30d9eb169814ae574f11b848ef/frontend/.gitignore#L10 | npm run build |
+| S3-R6 | README Stage 3 section + AI log | [README.md]https://github.com/Kadisha09/PhysioCare/blob/c92198820f58ab30d9eb169814ae574f11b848ef/README.md?plain=1#L36-L49, [ai-log/etapa-03.md] https://github.com/Kadisha09/PhysioCare/blob/c92198820f58ab30d9eb169814ae574f11b848ef/ai-log/etapa-03.md | read |
+| S3-R7 | commit “Stage 3” pushed | https://github.com/Kadisha09/PhysioCare/commit/a7abf91649f0cd8f696f44b2a5a677ed4a07e8a5 | commit history |
