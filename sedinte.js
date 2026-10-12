@@ -1,6 +1,6 @@
-// TopFizioKinetic - Etapa 2: logica pe date (fără DOM, fără evenimente)
+// TopFizioKinetic - Etapa 2: logica pe date 
 
-// ===== Pasul 2: datele de test și valorile permise =====
+//  Pasul 2: datele de test și valorile permise 
 const sedinte = [
   { id: 1, titlu: "Recuperare post-entorsă gleznă", efectuata: false, tip: "kinetoterapie" },
   { id: 2, titlu: "Masaj terapeutic zona cervicală", efectuata: true, tip: "masaj" },
@@ -9,23 +9,23 @@ const sedinte = [
 
 const TIPURI = ["kinetoterapie", "electroterapie", "masaj"];
 
-// ===== Pasul 3: listarea titlurilor =====
+//  Pasul 3: listarea titlurilor 
 function listeazaTitluri(lista) {
   return lista.map((s) => s.titlu);
 }
 
-// ===== Pasul 4: numărarea ședințelor programate (cele neefectuate) =====
+//  Pasul 4: numărarea ședințelor programate (cele neefectuate)
 function numaraProgramate(lista) {
   return lista.filter((s) => !s.efectuata).length;
 }
 
-// ===== Pasul 5: căutarea după titlu, fără diferență între litere mari și mici =====
+//  Pasul 5: căutarea după titlu, fără diferență între litere mari și mici
 function cautaDupaTitlu(lista, text) {
   const cautat = text.toLowerCase();
   return lista.filter((s) => s.titlu.toLowerCase().includes(cautat));
 }
 
-// ===== Pasul 6: adăugarea cu validare =====
+//  Pasul 6: adăugarea cu validare 
 // Id nou = cel mai mare id existent + 1 (lista.length + 1 ar produce id-uri duplicate după ștergere)
 function nextId(lista) {
   return lista.reduce((max, s) => Math.max(max, s.id), 0) + 1;
@@ -47,7 +47,7 @@ function adaugaSedinta(lista, titlu, tip = "kinetoterapie") {
   return [...lista, noua]; // array nou, originalul rămâne neschimbat
 }
 
-// ===== Pasul 7: comutarea stării și ștergerea =====
+//  Pasul 7: comutarea stării și ștergerea 
 function comutaEfectuata(lista, id) {
   return lista.map((s) => (s.id === id ? { ...s, efectuata: !s.efectuata } : s));
 }
@@ -56,7 +56,7 @@ function stergeSedinta(lista, id) {
   return lista.filter((s) => s.id !== id);
 }
 
-// ===== Pasul 8: testele din consolă, grupate pe secțiuni =====
+//  Pasul 8: testele din consolă, grupate pe secțiuni 
 console.log("--- Citire ---");
 console.log("Titluri:", listeazaTitluri(sedinte).join(", "));
 console.log("Programate:", numaraProgramate(sedinte));

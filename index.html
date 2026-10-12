@@ -9,11 +9,12 @@
 <body>
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
     <defs>
+      <!-- brad -->
       <symbol id="pin" viewBox="0 0 20 40">
         <path d="M10 0 L17 15 H13 L19 28 H11 V40 H9 V28 H1 L7 15 H3Z" style="fill:var(--pine)"/>
       </symbol>
 
-      <!-- mașină de off-road 4x4 -->
+      <!-- mașină de off-road -->
       <symbol id="jeep" viewBox="0 0 120 60">
         <path d="M22 28 L33 9 H84 L95 28Z" style="fill:var(--car)"/>
         <rect x="8" y="26" width="104" height="18" rx="5" style="fill:var(--car)"/>
@@ -33,9 +34,8 @@
         <ellipse cx="24" cy="9" rx="4" ry="5.5" fill="currentColor"/>
         <ellipse cx="32" cy="16" rx="4" ry="5.5" transform="rotate(18 32 16)" fill="currentColor"/>
       </symbol>
-      <symbol id="i-baraj" viewBox="0 0 40 40">
-        <path d="M3 9 Q20 2 37 9 L39 36 Q20 41 1 36Z" fill="currentColor"/>
-        <path d="M23 11 L13 24 H20 L17 35 L28 20 H21Z" style="fill:var(--disc)"/>
+      <symbol id="i-fulger" viewBox="0 0 40 40">
+        <path d="M24 2 L8 23 H19 L15 38 L33 15 H22Z" fill="currentColor"/>
       </symbol>
       <symbol id="i-vulpe" viewBox="0 0 40 40">
         <path d="M4 6 L14 12 H26 L36 6 C37 20 31 32 20 37 C9 32 3 20 4 6Z" fill="currentColor"/>
@@ -44,7 +44,7 @@
         <circle cx="14" cy="21" r="1.8" style="fill:var(--disc)"/><circle cx="26" cy="21" r="1.8" style="fill:var(--disc)"/>
       </symbol>
 
-      <!-- vulpe, ilustrație -->
+      <!-- vulpe -->
       <symbol id="vulpe" viewBox="0 0 120 92">
         <path d="M78 86 C114 90 120 54 100 38 C106 62 94 74 74 76Z" style="fill:var(--fox)"/>
         <path d="M100 38 C109 47 113 60 109 73 C106 61 102 49 100 38Z" fill="#fff"/>
@@ -73,8 +73,11 @@
         <g class="ochi"><circle cx="81" cy="72" r="4.2" fill="#1b110c"/><circle cx="119" cy="72" r="4.2" fill="#1b110c"/></g>
       </symbol>
 
-      <pattern id="cad" width="8" height="16" patternUnits="userSpaceOnUse"><path d="M2 0 V16 M6 4 V14" stroke="#fff" stroke-opacity=".6" stroke-width="2"/></pattern>
-      <clipPath id="cp"><rect x="626" y="218" width="30" height="114"/></clipPath>
+      <radialGradient id="halo">
+        <stop offset="0" stop-opacity=".95" style="stop-color:var(--sun-glow)"/>
+        <stop offset=".45" stop-opacity=".45" style="stop-color:var(--sun-glow)"/>
+        <stop offset="1" stop-opacity="0" style="stop-color:var(--sun-glow)"/>
+      </radialGradient>
       <linearGradient id="cet" x1="0" y1="0" x2="0" y2="1">
         <stop offset="0" stop-opacity="0" style="stop-color:var(--fog)"/><stop offset=".45" stop-opacity=".9" style="stop-color:var(--fog)"/><stop offset="1" stop-opacity=".6" style="stop-color:var(--fog)"/>
       </linearGradient>
@@ -85,39 +88,67 @@
     <input type="checkbox" id="ceata" class="mode-input" />
     <label for="ceata" class="mode-label" title="Schimbă vremea: senin sau ceață"></label>
 
-    <!-- Transfăgărășan: barajul Vidraru, serpentinele, ursul, vulpea -->
-    <svg class="scene" viewBox="0 0 1000 380" preserveAspectRatio="xMidYMax slice" role="img" aria-label="Transfăgărășan: barajul Vidraru, serpentinele, un urs brun și o vulpe">
-      <circle cx="860" cy="70" r="26" style="fill:var(--sun)" opacity=".9"/>
-      <path d="M0 230 L80 150 L130 185 L220 108 L300 190 L380 140 L470 200 L560 118 L650 190 L760 98 L850 170 L930 130 L1000 180 V380H0Z" style="fill:var(--far)"/>
-      <path d="M0 285 L100 212 L190 252 L300 192 L420 262 L520 200 L600 250 L1000 240 V380H0Z" style="fill:var(--mid)"/>
-      <path d="M170 306 C260 238 420 226 566 224 V312 H170Z" style="fill:var(--lake)"/>
-      <path d="M740 380 L800 190 L860 140 L920 100 L1000 90 V380Z" style="fill:var(--mid2)"/>
-      <!-- serpentinele -->
-      <path d="M1000 352 L790 330 L975 296 L795 262 L960 228 L810 196 L930 166" fill="none" stroke-width="9" stroke-linejoin="round" style="stroke:var(--asfalt)"/>
-      <path d="M1000 352 L790 330 L975 296 L795 262 L960 228 L810 196 L930 166" fill="none" stroke-width="1.2" stroke-dasharray="5 7" stroke-linejoin="round" style="stroke:var(--lane)"/>
-      <!-- mașina de off-road pe drum -->
-      <use href="#jeep" x="862" y="297" width="38" height="19" transform="rotate(-10 881 314)"/>
-      <!-- barajul Vidraru -->
-      <path d="M514 204 L566 208 L572 332 L496 332Z" style="fill:var(--rock)"/>
-      <path d="M718 208 L784 192 L806 332 L714 332Z" style="fill:var(--rock)"/>
-      <path d="M566 216 Q641 196 716 216 L726 332 Q641 352 558 332Z" style="fill:var(--concrete)"/>
-      <g fill="none" stroke-width="1.2" style="stroke:var(--concrete-dark)" opacity=".5"><path d="M562 256 Q641 236 722 256 M560 294 Q641 274 724 294 M600 210 L596 340 M686 210 L690 340"/></g>
-      <path d="M566 216 Q641 196 716 216" fill="none" stroke-width="4" style="stroke:var(--concrete-dark)"/>
-      <rect x="626" y="218" width="30" height="114" style="fill:var(--spill)"/>
-      <g clip-path="url(#cp)"><rect class="cad" x="626" y="202" width="30" height="146" fill="url(#cad)"/></g>
-      <ellipse class="ceata-baraj" cx="641" cy="336" rx="46" ry="9" fill="#fff" opacity=".6"/>
-      <path d="M470 334 L820 334 V356 H470Z" style="fill:var(--lake-dark)"/>
-      <path d="M0 342 C200 318 420 350 640 338 C820 326 920 352 1000 342 V380H0Z" style="fill:var(--ground)"/>
-      <use href="#pin" x="250" y="300" width="20" height="40"/><use href="#pin" x="276" y="308" width="16" height="32"/>
-      <use href="#pin" x="742" y="302" width="20" height="40"/>
-      <use href="#vulpe" x="404" y="298" width="86" height="66"/>
+    <!-- Munți, lac, cabană cu mașină de off-road, urs și vulpe -->
+    <svg class="scene" viewBox="0 0 1000 380" preserveAspectRatio="xMidYMax meet" role="img" aria-label="Munți cu zăpadă, un lac, o cabană cu o mașină de off-road, un urs brun și o vulpe, sub un soare mare">
+      <!-- soarele: raze, disc -->
+      <g class="soare" transform="translate(690 90)">
+        <circle r="150" fill="url(#halo)"/>
+        <g class="raze" stroke-width="4" stroke-linecap="round" style="stroke:var(--sun-ray)">
+          <line y1="-58" y2="-86"/><line y1="-58" y2="-86" transform="rotate(30)"/><line y1="-58" y2="-86" transform="rotate(60)"/>
+          <line y1="-58" y2="-86" transform="rotate(90)"/><line y1="-58" y2="-86" transform="rotate(120)"/><line y1="-58" y2="-86" transform="rotate(150)"/>
+          <line y1="-58" y2="-86" transform="rotate(180)"/><line y1="-58" y2="-86" transform="rotate(210)"/><line y1="-58" y2="-86" transform="rotate(240)"/>
+          <line y1="-58" y2="-86" transform="rotate(270)"/><line y1="-58" y2="-86" transform="rotate(300)"/><line y1="-58" y2="-86" transform="rotate(330)"/>
+        </g>
+        <circle r="42" style="fill:var(--sun)"/>
+      </g>
+
+      <!-- munții -->
+      <path d="M-1500 230 H0 L80 150 L130 185 L220 108 L300 190 L380 140 L470 200 L560 118 L650 190 L760 98 L850 170 L930 130 L1000 180 H2500 V380H-1500Z" style="fill:var(--far)"/>
+      <g style="fill:var(--snow)" opacity=".95">
+        <path d="M80 150 L96 172 L82 166 L68 174Z"/><path d="M220 108 L240 134 L222 128 L206 138Z"/><path d="M380 140 L394 160 L382 156 L368 164Z"/>
+        <path d="M560 118 L580 146 L562 140 L546 150Z"/><path d="M760 98 L782 128 L762 120 L744 132Z"/><path d="M930 130 L946 152 L932 146 L918 154Z"/>
+      </g>
+      <path d="M-1500 285 H0 L100 212 L190 252 L300 192 L420 262 L520 200 L600 250 L1000 240 H2500 V380H-1500Z" style="fill:var(--mid)"/>
+      <path d="M600 304 L740 236 L860 266 L1000 222 H2500 V380H600Z" style="fill:var(--mid2)"/>
+
+      <!-- lacul -->
+      <path d="M250 300 C330 266 620 262 720 296 C640 330 360 336 250 300Z" style="fill:var(--lake)"/>
+      <path d="M300 300 C380 278 600 276 680 296 C600 316 380 320 300 300Z" style="fill:var(--lake-dark)" opacity=".35"/>
+      <g fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="1.6" stroke-linecap="round"><path d="M330 292 q30 -5 60 0 M450 284 q40 -5 80 0 M520 304 q40 -5 90 0 M380 310 q30 -4 60 0"/></g>
+
+      <!-- terenul din prim-plan -->
+      <path d="M-1500 346 H0 C150 330 300 346 480 338 C640 330 740 306 1000 300 H2500 V380H-1500Z" style="fill:var(--ground)"/>
+      <use href="#pin" x="262" y="300" width="20" height="40"/><use href="#pin" x="284" y="308" width="16" height="32"/>
+      <use href="#pin" x="688" y="270" width="20" height="40"/>
+      <use href="#pin" x="880" y="262" width="22" height="44"/><use href="#pin" x="904" y="272" width="18" height="36"/><use href="#pin" x="934" y="258" width="26" height="52"/>
+
+      <!-- cabana -->
+      <g class="cabana">
+        <rect x="788" y="284" width="74" height="30" style="fill:var(--wood)"/>
+        <path d="M788 292 H862 M788 300 H862 M788 308 H862" stroke-width="1.2" opacity=".6" style="stroke:var(--wood-dark)"/>
+        <rect x="845" y="250" width="8" height="18" style="fill:var(--wood-dark)"/>
+        <path d="M776 286 L825 248 L874 286Z" style="fill:var(--roof)"/>
+        <path d="M790 278 L825 251 L860 278 L852 278 L825 258 L798 278Z" style="fill:var(--snow)"/>
+        <path d="M838 314 V298 C838 290 852 290 852 298 V314Z" style="fill:var(--roof)"/>
+        <rect x="796" y="292" width="16" height="14" style="fill:var(--win)"/>
+        <path d="M804 292 V306 M796 299 H812" stroke-width="1.5" style="stroke:var(--wood-dark)"/>
+        <rect x="832" y="314" width="26" height="4" style="fill:var(--wood-dark)"/>
+        <g class="fum" fill="#fff" opacity=".6"><circle cx="849" cy="244" r="4"/><circle cx="853" cy="236" r="5.5"/><circle cx="850" cy="226" r="7"/></g>
+      </g>
+
+      <!-- mașina de off-road, lângă cabană -->
+      <use href="#jeep" x="716" y="288" width="54" height="27"/>
+
+      <!-- vulpea și ursul -->
+      <use href="#vulpe" x="440" y="298" width="86" height="66"/>
       <use href="#urs" x="14" y="150" width="220" height="220"/>
-      <g class="fog"><rect x="0" y="130" width="1000" height="250" fill="url(#cet)"/></g>
+
+      <g class="fog"><rect x="-1500" y="130" width="4000" height="250" fill="url(#cet)"/></g>
     </svg>
 
     <div class="header-text">
       <h1>TopFizioKinetic</h1>
-      <p class="tagline">Recuperare cu răbdare de munte și pas sigur.</p>
+      <p class="tagline">Recuperare cu răbdare și pași siguri!</p>
       <p class="app-count">3 ședințe, dintre care 2 programate</p>
     </div>
   </header>
@@ -144,7 +175,6 @@
 
     <section class="panel panel-list">
       <h2>Ședințele mele</h2>
-      <!-- Când lista e goală: <p class="empty">Nu există nicio ședință.</p> -->
       <ul class="item-list">
         <li class="item-card t-kineto">
           <div class="item-info">
@@ -168,7 +198,7 @@
         </li>
         <li class="item-card t-electro">
           <div class="item-info">
-            <span class="disc"><svg aria-hidden="true"><use href="#i-baraj"/></svg></span>
+            <span class="disc"><svg aria-hidden="true"><use href="#i-fulger"/></svg></span>
             <div>
               <h3>Electroterapie lombară</h3>
               <span class="badge badge-electroterapie">Electroterapie</span>
@@ -180,7 +210,10 @@
     </section>
   </main>
 
-  <footer class="app-footer">Proiect Tehnologii Web</footer>
+  <footer class="app-footer">
+    <p class="motto">Un pas după altul, până în vârf.</p>
+  </footer>
+
   <script src="sedinte.js"></script>
 </body>
 </html>
