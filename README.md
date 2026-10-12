@@ -29,11 +29,14 @@ Details per stage: see the `ai-log/` folder.
 
 Open `index.html` directly in any modern web browser. No build step, no server required.
 
-## Status
+## Stage 2: data logic
+Plain JavaScript, no DOM. `sedinte.js` holds the array and the functions
+that read and change it. Results are printed in the browser console (F12).
 
+## Status
 - [x] Stage 1: static mockup
-- [ ] Stage 2: data logic in JavaScript
--
+- [x] Stage 2: data logic in JavaScript
+- [ ] Stage 3: Vite and React project
 
 ## Verification table
 
