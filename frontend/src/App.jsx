@@ -1,3 +1,5 @@
+import SedintaList from "./components/SedintaList.jsx";
+
 const sedinte = [
   { id: 1, titlu: "Recuperare post-entorsă gleznă", efectuata: false, tip: "kinetoterapie" },
   { id: 2, titlu: "Masaj terapeutic zona cervicală", efectuata: true, tip: "masaj" },
@@ -159,7 +161,7 @@ export default function App() {
       <main className="container">
         <section className="panel">
           <h2>Ședințele mele</h2>
-          <pre>{JSON.stringify(sedinte, null, 2)}</pre>
+          <SedintaList sedinte={sedinte} />
         </section>
       </main>
 
