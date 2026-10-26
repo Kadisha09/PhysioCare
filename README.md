@@ -113,3 +113,16 @@ which is what stage 6 and stage 10 fix.
 | S4-R5 | state changes the card look | [SedintaCard.jsx#L25]https://github.com/Kadisha09/PhysioCare/blob/86180ccecfc35d6564edc85e92812a449f38dc24/frontend/src/components/SedintaCard.jsx#L25 | toggle a done flag |
 | S4-R6 | README Stage 4 section + AI log | [README.md]https://github.com/Kadisha09/PhysioCare/blob/main/README.md, [ai-log/etapa-04.md]https://github.com/Kadisha09/PhysioCare/blob/main/ai-log/etapa-04.md | read |
 | S4-R7 | commit “Stage 4” pushed | [commit Stage 4]https://github.com/Kadisha09/PhysioCare/commit/86180ccecfc35d6564edc85e92812a449f38dc24 | commit history |
+
+
+## Verification table 5
+| ID | Requirement | Where (permalink) | How to check |
+|---|---|---|---|
+| S5-R1 | list kept in useState, in App | [App.jsx#L16] https://github.com/Kadisha09/PhysioCare/blob/d71e3b13ef76d8cfa613d720aa4e0ccc1839a4b2/frontend/src/App.jsx#L16 | read |
+| S5-R2 | toggling changes state and card look | [App.jsx#L..-L19-L23]https://github.com/Kadisha09/PhysioCare/blob/d71e3b13ef76d8cfa613d720aa4e0ccc1839a4b2/frontend/src/App.jsx#L19-L23, [SedintaCard.jsx#L25-L31]https://github.com/Kadisha09/PhysioCare/blob/d71e3b13ef76d8cfa613d720aa4e0ccc1839a4b2/frontend/src/components/SedintaCard.jsx#L25-L31 | click a checkbox |
+| S5-R3 | delete removes the item | [App.jsx#L25-L27]https://github.com/Kadisha09/PhysioCare/blob/d71e3b13ef76d8cfa613d720aa4e0ccc1839a4b2/frontend/src/App.jsx#L25-L27, [SedintaCard.jsx#L49-L56]https://github.com/Kadisha09/PhysioCare/blob/d71e3b13ef76d8cfa613d720aa4e0ccc1839a4b2/frontend/src/components/SedintaCard.jsx#L49-L56 | click Delete |
+| S5-R4 | header counter derived, not in state | [App.jsx#L37]https://github.com/Kadisha09/PhysioCare/blob/d71e3b13ef76d8cfa613d720aa4e0ccc1839a4b2/frontend/src/App.jsx#L37 | toggle, watch header |
+| S5-R5 | immutable updates (no push, splice, assignment) | [App.jsx#L19-L27]https://github.com/Kadisha09/PhysioCare/blob/d71e3b13ef76d8cfa613d720aa4e0ccc1839a4b2/frontend/src/App.jsx#L19-L27| read |
+| S5-R6 | light / dark toggle: state + data-theme on html | [App.jsx#L30-L34] https://github.com/Kadisha09/PhysioCare/blob/d71e3b13ef76d8cfa613d720aa4e0ccc1839a4b2/frontend/src/App.jsx#L30-L34, [App.css#L127-L177]https://github.com/Kadisha09/PhysioCare/blob/d71e3b13ef76d8cfa613d720aa4e0ccc1839a4b2/frontend/src/App.css#L127-L177 | click the button, both system themes |
+| S5-R7 | no console warnings; README + AI log | [README.md]https://github.com/Kadisha09/PhysioCare/blob/main/README.md#stage-5-local-state-and-events, [ai-log/etapa-05.md]https://github.com/Kadisha09/PhysioCare/blob/main/ai-log/etapa-05.md | F12, Console |
+| S5-R8 | commit “Stage 5” pushed | [commit Stage 5]https://github.com/Kadisha09/PhysioCare/commit/31f8a866bcdb5b13416eb4551faa773f05bf1a0e | commit history |
