@@ -91,3 +91,16 @@ The list is rendered from the data, through two components:
 | S3-R5 | node_modules ignored, build passes | [frontend/.gitignore]https://github.com/Kadisha09/PhysioCare/blob/c92198820f58ab30d9eb169814ae574f11b848ef/frontend/.gitignore#L10 | npm run build |
 | S3-R6 | README Stage 3 section + AI log | [README.md]https://github.com/Kadisha09/PhysioCare/blob/c92198820f58ab30d9eb169814ae574f11b848ef/README.md?plain=1#L36-L49, [ai-log/etapa-03.md] https://github.com/Kadisha09/PhysioCare/blob/c92198820f58ab30d9eb169814ae574f11b848ef/ai-log/etapa-03.md | read |
 | S3-R7 | commit “Stage 3” pushed | https://github.com/Kadisha09/PhysioCare/commit/a7abf91649f0cd8f696f44b2a5a677ed4a07e8a5 | commit history |
+
+
+
+## Verification table 4
+| ID | Requirement | Where (permalink) | How to check |
+|---|---|---|---|
+| S4-R1 | 2+ components in src/components/ | [frontend/src/components/]https://github.com/Kadisha09/PhysioCare/tree/main/frontend/src/components | open folder |
+| S4-R2 | card receives data through props | [SedintaCard.jsx#L19-L42]https://github.com/Kadisha09/PhysioCare/blob/86180ccecfc35d6564edc85e92812a449f38dc24/frontend/src/components/SedintaCard.jsx#L19-L42 | read |
+| S4-R3 | map + key={id}, no console warnings | [SedintaList.jsx#L10-L14]https://github.com/Kadisha09/PhysioCare/blob/86180ccecfc35d6564edc85e92812a449f38dc24/frontend/src/components/SedintaList.jsx#L10-L14 | F12, Console |
+| S4-R4 | message for empty list | [SedintaList.jsx#L4-L6]https://github.com/Kadisha09/PhysioCare/blob/86180ccecfc35d6564edc85e92812a449f38dc24/frontend/src/components/SedintaList.jsx#L4-L6 | set array to [] |
+| S4-R5 | state changes the card look | [SedintaCard.jsx#L25]https://github.com/Kadisha09/PhysioCare/blob/86180ccecfc35d6564edc85e92812a449f38dc24/frontend/src/components/SedintaCard.jsx#L25 | toggle a done flag |
+| S4-R6 | README Stage 4 section + AI log | [README.md]https://github.com/Kadisha09/PhysioCare/blob/main/README.md, [ai-log/etapa-04.md]https://github.com/Kadisha09/PhysioCare/blob/main/ai-log/etapa-04.md | read |
+| S4-R7 | commit “Stage 4” pushed | [commit Stage 4]https://github.com/Kadisha09/PhysioCare/commit/86180ccecfc35d6564edc85e92812a449f38dc24 | commit history |
