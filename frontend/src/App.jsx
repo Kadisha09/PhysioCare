@@ -1,9 +1,10 @@
 import SedintaList from "./components/SedintaList.jsx";
+import "./App.css";
 
 const sedinte = [
   { id: 1, titlu: "Recuperare post-entorsă gleznă", efectuata: false, tip: "kinetoterapie" },
   { id: 2, titlu: "Masaj terapeutic zona cervicală", efectuata: true, tip: "masaj" },
-  { id: 3, titlu: "Electroterapie lombară", efectuata: false, tip: "electroterapie" },
+  { id: 3, titlu: "Electroterapie lombară", efectuata: false, tip: "electroterapie" }
 ];
 
 export default function App() {
@@ -29,6 +30,23 @@ export default function App() {
             <circle cx="90" cy="46" r="13" style={{ fill: "var(--tire)" }} />
             <circle cx="90" cy="46" r="11" fill="none" strokeWidth="3" strokeDasharray="4 4" style={{ stroke: "var(--hub)" }} />
             <circle cx="90" cy="46" r="4.5" style={{ fill: "var(--hub)" }} />
+          </symbol>
+          <symbol id="i-labuta" viewBox="0 0 40 40">
+            <ellipse cx="20" cy="27" rx="10" ry="8.5" fill="currentColor" />
+            <ellipse cx="8" cy="16" rx="4" ry="5.5" transform="rotate(-18 8 16)" fill="currentColor" />
+            <ellipse cx="16" cy="9" rx="4" ry="5.5" fill="currentColor" />
+            <ellipse cx="24" cy="9" rx="4" ry="5.5" fill="currentColor" />
+            <ellipse cx="32" cy="16" rx="4" ry="5.5" transform="rotate(18 32 16)" fill="currentColor" />
+          </symbol>
+          <symbol id="i-fulger" viewBox="0 0 40 40">
+            <path d="M24 2 L8 23 H19 L15 38 L33 15 H22Z" fill="currentColor" />
+          </symbol>
+          <symbol id="i-vulpe" viewBox="0 0 40 40">
+            <path d="M4 6 L14 12 H26 L36 6 C37 20 31 32 20 37 C9 32 3 20 4 6Z" fill="currentColor" />
+            <path d="M12 26 C15 31 18 34 20 35 C22 34 25 31 28 26 C24 29 16 29 12 26Z" style={{ fill: "var(--disc)" }} />
+            <circle cx="20" cy="33" r="2" fill="#1c1f22" />
+            <circle cx="14" cy="21" r="1.8" style={{ fill: "var(--disc)" }} />
+            <circle cx="26" cy="21" r="1.8" style={{ fill: "var(--disc)" }} />
           </symbol>
           <symbol id="vulpe" viewBox="0 0 120 92">
             <path d="M78 86 C114 90 120 54 100 38 C106 62 94 74 74 76Z" style={{ fill: "var(--fox)" }} />
@@ -159,7 +177,26 @@ export default function App() {
       </header>
 
       <main className="container">
-        <section className="panel">
+        <section className="panel panel-form">
+          <h2>Adaugă ședință</h2>
+          <form className="item-form" onSubmit={(e) => e.preventDefault()}>
+            <label>
+              Titlu ședință
+              <input type="text" name="titlu" maxLength={100} placeholder="Ex: Recuperare post-entorsă gleznă" />
+            </label>
+            <label>
+              Tip terapie
+              <select name="tip" defaultValue="kinetoterapie">
+                <option value="kinetoterapie">Kinetoterapie</option>
+                <option value="electroterapie">Electroterapie</option>
+                <option value="masaj">Masaj terapeutic</option>
+              </select>
+            </label>
+            <button type="submit">Adaugă</button>
+          </form>
+        </section>
+
+        <section className="panel panel-list">
           <h2>Ședințele mele</h2>
           <SedintaList sedinte={sedinte} />
         </section>

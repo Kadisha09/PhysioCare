@@ -42,11 +42,16 @@ npm install
 npm run dev
 Then open the address printed in the terminal (http://localhost:5173/).
 
+## Stage 4: components
+The list is rendered from the data, through two components:
+- `SedintaList` receives the whole array and renders one card per item
+- `SedintaCard` receives a single item through props and displays it
+
 ## Status
 - [x] Stage 1: static mockup
 - [x] Stage 2: data logic in JavaScript
 - [x] Stage 3: Vite and React project
-- [ ] Stage 4: Components and props
+- [x] Stage 4: Components and props
 
 ## Verification table
 
