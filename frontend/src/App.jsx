@@ -1,13 +1,39 @@
+import { useState } from "react";
 import SedintaList from "./components/SedintaList.jsx";
 import "./App.css";
 
-const sedinte = [
+const SEDINTE_INITIALE = [
   { id: 1, titlu: "Recuperare post-entorsă gleznă", efectuata: false, tip: "kinetoterapie" },
   { id: 2, titlu: "Masaj terapeutic zona cervicală", efectuata: true, tip: "masaj" },
   { id: 3, titlu: "Electroterapie lombară", efectuata: false, tip: "electroterapie" }
 ];
 
+function temaInitiala() {
+  return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+}
+
 export default function App() {
+  const [sedinte, setSedinte] = useState(SEDINTE_INITIALE);
+  const [tema, setTema] = useState(temaInitiala);
+
+  function handleToggle(id) {
+    setSedinte((prev) =>
+      prev.map((s) => (s.id === id ? { ...s, efectuata: !s.efectuata } : s))
+    );
+  }
+
+  function handleDelete(id) {
+    setSedinte((prev) => prev.filter((s) => s.id !== id));
+  }
+
+  // Comutare temă 
+  function handleTema() {
+    const noua = tema === "dark" ? "light" : "dark";
+    setTema(noua);
+    document.documentElement.dataset.theme = noua;
+  }
+
+  // Valoare derivată la fiecare randare
   const programate = sedinte.filter((s) => !s.efectuata).length;
 
   return (
@@ -92,8 +118,14 @@ export default function App() {
       </svg>
 
       <header className="app-header">
-        <input type="checkbox" id="ceata" className="mode-input" />
-        <label htmlFor="ceata" className="mode-label" title="Schimbă vremea: senin sau ceață"></label>
+        {/* Butonul de comutare din Etapa 5 */}
+        <button
+          className="theme-toggle"
+          onClick={handleTema}
+          aria-pressed={tema === "dark"}
+        >
+          {tema === "dark" ? "Mod luminos" : "Mod întunecat"}
+        </button>
 
         <svg className="scene" viewBox="0 0 1000 380" preserveAspectRatio="xMidYMax meet" role="img" aria-label="Munți cu zăpadă, un lac, o cabană cu o mașină de off-road, un urs brun și o vulpe, sub un soare mare">
           <g className="soare" transform="translate(690 90)">
@@ -161,10 +193,6 @@ export default function App() {
           <use href="#jeep" x="716" y="288" width="54" height="27" />
           <use href="#vulpe" x="440" y="298" width="86" height="66" />
           <use href="#urs" x="14" y="150" width="220" height="220" />
-
-          <g className="fog">
-            <rect x="-1500" y="130" width="4000" height="250" fill="url(#cet)" />
-          </g>
         </svg>
 
         <div className="header-text">
@@ -198,7 +226,11 @@ export default function App() {
 
         <section className="panel panel-list">
           <h2>Ședințele mele</h2>
-          <SedintaList sedinte={sedinte} />
+          <SedintaList
+            sedinte={sedinte}
+            onToggle={handleToggle}
+            onDelete={handleDelete}
+          />
         </section>
       </main>
 

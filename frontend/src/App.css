@@ -7,8 +7,124 @@
   text-align: left !important;
 }
 
-/* Variabile implicite setate direct pe tema întunecată (noapte la munte) */
+/*  TEMA LUMINOASĂ */
 :root {
+  --bg: #f5f2eb;
+  --card: #fffdf9;
+  --text: #1c2724;
+  --muted: #667069;
+  --accent: #27483c;
+  --accent-dark: #1a3329;
+  --accent-soft: #e6ede8;
+  --border: #e3ded2;
+  --on-accent: #ffffff;
+  --input-bg: #f3efe6;
+  --copper: #a85a30;
+  --danger: #b93838;
+
+  --sky-1: #3b86c6;
+  --sky-2: #fdeec3;
+  --stars: none;
+  --on-sky: #ffffff;
+  --sun: #ffd84a;
+  --sun-glow: #fff3b0;
+  --sun-ray: #ffe27a;
+
+  --far: #a9bfd0;
+  --mid: #7d9d9b;
+  --mid2: #5f8574;
+  --snow: #ffffff;
+  --lake: #3fa7b0;
+  --lake-dark: #2b7f8c;
+  --ground: #3f7a4c;
+  --pine: #1f4636;
+
+  --wood: #9a6a3b;
+  --wood-dark: #6e4626;
+  --roof: #7a3b2e;
+  --win: #ffd98a;
+
+  --bear: #6f4527;
+  --bear-dark: #46281a;
+  --bear-light: #a07049;
+  --muzzle: #c7a283;
+  --fox: #d9742f;
+  --fox-dark: #2a1a12;
+
+  --car: #c9772a;
+  --tire: #1c1f22;
+  --hub: #a9afb3;
+  --rack: #3a3f44;
+  --glass-win: #e3eff4;
+
+  --footer: #1a3329;
+  --disc: #f5f2eb;
+
+  --badge-kinetoterapie: #2f5d4b;
+  --badge-electroterapie: #2f7f8c;
+  --badge-masaj: #a85a30;
+  --on-badge: #ffffff;
+
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+}
+
+/*  TEMA SISTEMULUI */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0e1513;
+    --card: #151e1b;
+    --text: #e6ece8;
+    --muted: #9aaba2;
+    --accent: #8fc9ad;
+    --accent-dark: #0f1f19;
+    --accent-soft: #1c2b25;
+    --border: #26362f;
+    --on-accent: #0a1a13;
+    --input-bg: #1a2622;
+    --copper: #e0955f;
+    --danger: #e26d6d;
+
+    --sky-1: #070d18;
+    --sky-2: #1c2c3c;
+    --stars:
+      radial-gradient(1.5px 1.5px at 8% 12%, #fff, transparent),
+      radial-gradient(1.5px 1.5px at 30% 26%, #fff, transparent),
+      radial-gradient(1px 1px at 46% 10%, #fff, transparent),
+      radial-gradient(1.5px 1.5px at 64% 20%, #fff, transparent),
+      radial-gradient(1px 1px at 80% 12%, #fff, transparent),
+      radial-gradient(1.5px 1.5px at 93% 28%, #fff, transparent);
+    --sun: #e9eef5;
+    --sun-glow: #7f95bd;
+    --sun-ray: transparent;
+
+    --far: #1f3044;
+    --mid: #183230;
+    --mid2: #12261f;
+    --snow: #cfd9e6;
+    --lake: #146a72;
+    --lake-dark: #0b3f4a;
+    --ground: #15301f;
+    --pine: #0f2a1f;
+
+    --wood: #6b4a2c;
+    --wood-dark: #432b17;
+    --roof: #4a2a24;
+
+    --bear: #5a3820;
+    --muzzle: #a98366;
+    --car: #a85f1f;
+
+    --footer: #0f1f19;
+    --disc: #1a2622;
+    --badge-kinetoterapie: #77c9a0;
+    --badge-electroterapie: #6cc0ec;
+    --badge-masaj: #f0a068;
+    --on-badge: #0e1513;
+  }
+}
+
+/* TEMA ÎNTUNECATĂ ALEASĂ EXPLICIT DIN BUTON */
+:root[data-theme="dark"] {
   --bg: #0e1513;
   --card: #151e1b;
   --text: #e6ece8;
@@ -20,8 +136,8 @@
   --on-accent: #0a1a13;
   --input-bg: #1a2622;
   --copper: #e0955f;
+  --danger: #e26d6d;
 
-  /* cer de noapte, cu stele și lună */
   --sky-1: #070d18;
   --sky-2: #1c2c3c;
   --stars:
@@ -31,12 +147,10 @@
     radial-gradient(1.5px 1.5px at 64% 20%, #fff, transparent),
     radial-gradient(1px 1px at 80% 12%, #fff, transparent),
     radial-gradient(1.5px 1.5px at 93% 28%, #fff, transparent);
-  --on-sky: #ffffff;
   --sun: #e9eef5;
   --sun-glow: #7f95bd;
   --sun-ray: transparent;
 
-  /* relief și natură nocturnă */
   --far: #1f3044;
   --mid: #183230;
   --mid2: #12261f;
@@ -44,42 +158,22 @@
   --lake: #146a72;
   --lake-dark: #0b3f4a;
   --ground: #15301f;
-  --fog: #26353f;
   --pine: #0f2a1f;
 
-  /* cabana */
   --wood: #6b4a2c;
   --wood-dark: #432b17;
   --roof: #4a2a24;
-  --win: #ffd98a;
 
-  /* animale */
   --bear: #5a3820;
-  --bear-dark: #46281a;
-  --bear-light: #a07049;
   --muzzle: #a98366;
-  --fox: #d9742f;
-  --fox-dark: #2a1a12;
-
-  /* mașina de off-road */
   --car: #a85f1f;
-  --tire: #1c1f22;
-  --hub: #a9afb3;
-  --rack: #3a3f44;
-  --glass-win: #e3eff4;
 
-  /* subsol */
   --footer: #0f1f19;
-
   --disc: #1a2622;
-
-  /* etichete pentru fiecare tip de terapie */
   --badge-kinetoterapie: #77c9a0;
   --badge-electroterapie: #6cc0ec;
   --badge-masaj: #f0a068;
   --on-badge: #0e1513;
-
-  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
 }
 
 body {
@@ -88,6 +182,7 @@ body {
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 /* Antetul */
@@ -112,30 +207,32 @@ body {
 }
 .header-text h1 { margin: 0 0 6px; font-family: var(--serif); font-weight: 600; font-size: clamp(2rem, 5.5vw, 3.2rem); letter-spacing: .5px; line-height: 1.1; }
 .tagline { margin: 0 0 14px; font-size: 1.05rem; }
-.app-count { display: inline-block; margin: 0; padding: 4px 14px; font-size: .85rem; border: 1px solid rgba(255, 255, 255, .3); border-radius: 999px; background: rgba(20, 35, 30, .55); text-shadow: none; }
+.app-count { display: inline-block; margin: 0; padding: 4px 14px; font-size: .85rem; border: 1px solid rgba(255, 255, 255, .3); border-radius: 999px; background: rgba(20, 35, 30, .45); text-shadow: none; }
 
-/* animații */
-.soare { transition: opacity 1.4s; }
-.fum { animation: urca 5s ease-in-out infinite alternate; }
-.ochi { transform-box: fill-box; transform-origin: center; animation: clipeste 6s infinite; }
-.fog { opacity: 0; transition: opacity 1.4s; }
-@keyframes urca { to { transform: translateY(-8px); opacity: .25; } }
-@keyframes clipeste { 0%, 94%, 100% { transform: scaleY(1); } 97% { transform: scaleY(.1); } }
-@media (prefers-reduced-motion: reduce) { .fum, .ochi { animation: none; } }
+/* Butonul de schimbare temă */
+.theme-toggle {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  z-index: 3;
+  padding: 6px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 999px;
+  background: rgba(20, 35, 30, 0.45);
+  color: #fff;
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  transition: background 0.2s, transform 0.15s;
+}
+.theme-toggle:hover {
+  background: rgba(20, 35, 30, 0.7);
+  transform: translateY(-1px);
+}
 
-/* comutator senin - ceață */
-.mode-input { position: absolute; opacity: 0; }
-.mode-label { position: absolute; top: 18px; right: 18px; z-index: 2; padding: 5px 14px 5px 34px; border-radius: 999px; background: rgba(21, 30, 27, .88); color: #e6ece8; border: 1px solid var(--border); font-size: .85rem; cursor: pointer; }
-.mode-label::before { content: ""; position: absolute; left: 10px; top: 9px; width: 14px; height: 14px; border-radius: 50%; background: #ffd84a; box-shadow: 0 0 8px #ffd84a; transition: background .6s, box-shadow .6s; }
-.mode-label::after { content: "Senin"; }
-.mode-input:checked + .mode-label::after { content: "Ceață"; }
-.mode-input:checked + .mode-label::before { background: #9aa8ad; box-shadow: none; }
-.mode-input:focus-visible + .mode-label { outline: 2px solid var(--accent); outline-offset: 2px; }
-body:has(#ceata:checked) { --sky-1: #1a2228; --sky-2: #344047; }
-body:has(#ceata:checked) .fog { opacity: 1; }
-body:has(#ceata:checked) .soare { opacity: .25; }
-
-/* Conținutul: coloana stânga formular + coloana dreapta listă */
+/* Conținutul cu două coloane */
 .container {
   position: relative;
   z-index: 2;
@@ -153,7 +250,7 @@ body:has(#ceata:checked) .soare { opacity: .25; }
   border: 1px solid var(--border); 
   border-radius: 18px; 
   padding: 24px 26px; 
-  box-shadow: 0 10px 30px rgba(0, 0, 0, .35); 
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .15); 
 }
 .panel h2 { margin: 0 0 16px; font-family: var(--serif); font-weight: 600; font-size: 1.35rem; color: var(--accent); }
 .panel-form { position: sticky; top: 20px; }
@@ -166,11 +263,10 @@ body:has(#ceata:checked) .soare { opacity: .25; }
 .item-form input:hover,
 .item-form select:hover { border-color: var(--accent); }
 .item-form input:focus,
-.item-form select:focus { border-color: var(--accent); background: #22322c; outline: none; }
+.item-form select:focus { border-color: var(--accent); outline: none; }
 .item-form button { font: inherit; font-weight: 600; padding: 11px 28px; border: none; border-radius: 10px; background: var(--accent); color: var(--on-accent); cursor: pointer; transition: background .2s, transform .2s; }
-.item-form button:hover { background: #a2d6be; transform: translateY(-1px); }
+.item-form button:hover { opacity: 0.9; transform: translateY(-1px); }
 
-/* Lista */
 .item-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
 
 .item-card {
@@ -185,10 +281,25 @@ body:has(#ceata:checked) .soare { opacity: .25; }
   border-radius: 14px;
   transition: transform .25s, box-shadow .25s;
 }
-.item-card:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0, 0, 0, .4); }
+.item-card:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0, 0, 0, .2); }
 .item-card.t-kineto  { border-left-color: var(--badge-kinetoterapie); }
 .item-card.t-electro { border-left-color: var(--badge-electroterapie); }
 .item-card.t-masaj   { border-left-color: var(--badge-masaj); }
+
+.task-main {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+  flex: 1;
+}
+
+.task-main input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
 
 .item-info { display: flex; align-items: center; gap: 14px; }
 .item-card h3 { margin: 0 0 6px; font-size: 1rem; font-weight: 600; }
@@ -199,8 +310,32 @@ body:has(#ceata:checked) .soare { opacity: .25; }
 .t-electro .disc { color: var(--badge-electroterapie); }
 .t-masaj .disc   { color: var(--badge-masaj); }
 
+/* status + buton ștergere */
+.card-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
 .status { font-size: .85rem; color: var(--muted); white-space: nowrap; }
 .status::before { content: ""; display: inline-block; width: 8px; height: 8px; margin-right: 8px; border-radius: 50%; background: var(--copper); }
+
+.btn-danger {
+  border: 1px solid var(--danger);
+  background: transparent;
+  color: var(--danger);
+  border-radius: 8px;
+  padding: 6px 12px;
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.btn-danger:hover {
+  background: var(--danger);
+  color: #fff;
+}
 
 .empty { margin: 0; padding: 18px; text-align: center; color: var(--muted); border: 1px dashed var(--border); border-radius: 12px; }
 
@@ -210,10 +345,9 @@ body:has(#ceata:checked) .soare { opacity: .25; }
 .badge-electroterapie { background: var(--badge-electroterapie); }
 .badge-masaj          { background: var(--badge-masaj); }
 
-/* Element finalizat */
-.item-card.done { background: var(--accent-soft); }
+/* Element efectuat */
+.item-card.done { opacity: 0.75; }
 .item-card.done h3 { text-decoration: line-through; color: var(--muted); }
-.item-card.done .disc { background: var(--card); }
 .item-card.done .status { color: var(--accent); font-weight: 600; }
 .item-card.done .status::before { content: "✓"; width: auto; height: auto; background: none; margin-right: 6px; }
 
@@ -224,7 +358,7 @@ body:has(#ceata:checked) .soare { opacity: .25; }
 
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
-/* Ecrane înguste */
+/* Ecrane mici */
 @media (max-width: 700px) {
   .app-header { min-height: 0; }
   .header-text { grid-area: 1 / 1; margin: 58px 6% 8px; }
