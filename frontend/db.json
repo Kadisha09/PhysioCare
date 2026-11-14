@@ -1,0 +1,34 @@
+{
+  "sedinte": [
+    {
+      "id": 1,
+      "titlu": "Recuperare post-entorsă gleznă",
+      "efectuata": false,
+      "tip": "kinetoterapie"
+    },
+    {
+      "id": 2,
+      "titlu": "Masaj terapeutic zona cervicală",
+      "efectuata": true,
+      "tip": "masaj"
+    },
+    {
+      "id": 3,
+      "titlu": "Electroterapie lombară",
+      "efectuata": false,
+      "tip": "electroterapie"
+    },
+    {
+      "id": 4,
+      "titlu": "Drenaj limfatic membru inferior",
+      "efectuata": false,
+      "tip": "masaj"
+    },
+    {
+      "id": 5,
+      "titlu": "Reeducare posturală globală",
+      "efectuata": true,
+      "tip": "kinetoterapie"
+    }
+  ]
+}

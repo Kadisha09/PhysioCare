@@ -1,20 +1,35 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import SedintaList from "./components/SedintaList.jsx";
+import { fetchSedinte } from "./api.js";
 import "./App.css";
-
-const SEDINTE_INITIALE = [
-  { id: 1, titlu: "Recuperare post-entorsă gleznă", efectuata: false, tip: "kinetoterapie" },
-  { id: 2, titlu: "Masaj terapeutic zona cervicală", efectuata: true, tip: "masaj" },
-  { id: 3, titlu: "Electroterapie lombară", efectuata: false, tip: "electroterapie" }
-];
 
 function temaInitiala() {
   return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
 }
 
 export default function App() {
-  const [sedinte, setSedinte] = useState(SEDINTE_INITIALE);
+  const [sedinte, setSedinte] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const [tema, setTema] = useState(temaInitiala);
+
+  useEffect(() => {
+    let ignore = false;
+    async function load() {
+      try {
+        const data = await fetchSedinte();
+        if (!ignore) setSedinte(data);
+      } catch (err) {
+        if (!ignore) setError(err.message);
+      } finally {
+        if (!ignore) setLoading(false);
+      }
+    }
+    load();
+    return () => {
+      ignore = true;
+    };
+  }, []);
 
   function handleToggle(id) {
     setSedinte((prev) =>
@@ -118,7 +133,6 @@ export default function App() {
       </svg>
 
       <header className="app-header">
-        {/* Butonul de comutare din Etapa 5 */}
         <button
           className="theme-toggle"
           onClick={handleTema}
@@ -226,11 +240,19 @@ export default function App() {
 
         <section className="panel panel-list">
           <h2>Ședințele mele</h2>
-          <SedintaList
-            sedinte={sedinte}
-            onToggle={handleToggle}
-            onDelete={handleDelete}
-          />
+          {loading && <p className="info">Se încarcă ședințele...</p>}
+          {error && (
+            <p className="error">
+              Nu am putut încărca datele: {error}. Rulează <code>npm run api</code>?
+            </p>
+          )}
+          {!loading && !error && (
+            <SedintaList
+              sedinte={sedinte}
+              onToggle={handleToggle}
+              onDelete={handleDelete}
+            />
+          )}
         </section>
       </main>
 

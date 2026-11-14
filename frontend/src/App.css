@@ -21,6 +21,8 @@
   --input-bg: #f3efe6;
   --copper: #a85a30;
   --danger: #b93838;
+  --error-bg: #fdf2f8;
+  --error-border: #fbcfe8;
 
   --sky-1: #3b86c6;
   --sky-2: #fdeec3;
@@ -83,6 +85,8 @@
     --input-bg: #1a2622;
     --copper: #e0955f;
     --danger: #e26d6d;
+    --error-bg: #3b1d2e;
+    --error-border: #6b2a4a;
 
     --sky-1: #070d18;
     --sky-2: #1c2c3c;
@@ -137,6 +141,8 @@
   --input-bg: #1a2622;
   --copper: #e0955f;
   --danger: #e26d6d;
+  --error-bg: #3b1d2e;
+  --error-border: #6b2a4a;
 
   --sky-1: #070d18;
   --sky-2: #1c2c3c;
@@ -367,4 +373,14 @@ body {
   .panel { padding: 20px 18px; }
   .panel-form { position: static; }
   .item-card { flex-wrap: wrap; }
+}
+
+/* Etapa 6: stări de încărcare și de eroare */
+.info { color: var(--muted); }
+.error {
+  color: var(--danger);
+  background: var(--error-bg);
+  border: 1px solid var(--error-border);
+  border-radius: 8px;
+  padding: 10px 12px;
 }
