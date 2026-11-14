@@ -132,3 +132,16 @@ and shows a loading state and an error state.
 | S5-R6 | light / dark toggle: state + data-theme on html | [App.jsx#L30-L34] https://github.com/Kadisha09/PhysioCare/blob/d71e3b13ef76d8cfa613d720aa4e0ccc1839a4b2/frontend/src/App.jsx#L30-L34, [App.css#L127-L177]https://github.com/Kadisha09/PhysioCare/blob/d71e3b13ef76d8cfa613d720aa4e0ccc1839a4b2/frontend/src/App.css#L127-L177 | click the button, both system themes |
 | S5-R7 | no console warnings; README + AI log | [README.md]https://github.com/Kadisha09/PhysioCare/blob/main/README.md#stage-5-local-state-and-events, [ai-log/etapa-05.md]https://github.com/Kadisha09/PhysioCare/blob/main/ai-log/etapa-05.md | F12, Console |
 | S5-R8 | commit “Stage 5” pushed | [commit Stage 5]https://github.com/Kadisha09/PhysioCare/commit/31f8a866bcdb5b13416eb4551faa773f05bf1a0e | commit history |
+
+
+## Verification table 6
+
+| ID | Requirement | Where (permalink) | How to check |
+| :--- | :--- | :--- | :--- |
+| S6-R1 | `npm run api` starts, route shows JSON | https://github.com/Kadisha09/PhysioCare/blob/b9975d6ed60a34ceef8fa6141640eb9796e96313/frontend/package.json#L11 , https://github.com/Kadisha09/PhysioCare/blob/main/frontend/db.json | open `http://localhost:3001/sedinte` |
+| S6-R2 | data no longer in React code | https://github.com/Kadisha09/PhysioCare/blob/b9975d6ed60a34ceef8fa6141640eb9796e96313/frontend/src/App.jsx#L11 | read |
+| S6-R3 | loading message while waiting | https://github.com/Kadisha09/PhysioCare/blob/b9975d6ed60a34ceef8fa6141640eb9796e96313/frontend/src/App.jsx#L243 | `--delay 4000` |
+| S6-R4 | error message when API is down | https://github.com/Kadisha09/PhysioCare/blob/b9975d6ed60a34ceef8fa6141640eb9796e96313/frontend/src/App.jsx#L244-L248 | stop `npm run api`, refresh |
+| S6-R5 | `fetch` only in `api.js`, URL from env | https://github.com/Kadisha09/PhysioCare/blob/b9975d6ed60a34ceef8fa6141640eb9796e96313/frontend/src/api.js#L1-L10, https://github.com/Kadisha09/PhysioCare/blob/b9975d6ed60a34ceef8fa6141640eb9796e96313/frontend/.env.example#L1-L2 | search for `fetch` |
+| S6-R6 | README Stage 6 section + AI log | https://github.com/Kadisha09/PhysioCare/blob/main/README.md, https://github.com/Kadisha09/PhysioCare/blob/main/ai-log/etapa-06.md | read |
+| S6-R7 | commit `"Stage 6"` pushed | https://github.com/Kadisha09/PhysioCare/commit/711026db1bcafb780e33b9897a8880c1f90255f2, https://github.com/Kadisha09/PhysioCare/commit/b9975d6ed60a34ceef8fa6141640eb9796e96313 | commit history |
