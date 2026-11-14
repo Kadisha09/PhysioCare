@@ -1,19 +1,19 @@
 const CLASA_TIP = {
   kinetoterapie: "t-kineto",
   masaj: "t-masaj",
-  electroterapie: "t-electro"
+  electroterapie: "t-electro",
 };
 
 const ETICHETA_TIP = {
   kinetoterapie: "Kinetoterapie",
   masaj: "Masaj terapeutic",
-  electroterapie: "Electroterapie"
+  electroterapie: "Electroterapie",
 };
 
 const ICON_TIP = {
   kinetoterapie: "#i-labuta",
   masaj: "#i-vulpe",
-  electroterapie: "#i-fulger"
+  electroterapie: "#i-fulger",
 };
 
 export default function SedintaCard({ sedinta, onToggle, onDelete }) {
@@ -22,12 +22,17 @@ export default function SedintaCard({ sedinta, onToggle, onDelete }) {
   const eticheta = ETICHETA_TIP[sedinta.tip] || sedinta.tip;
 
   return (
-    <li className={`item-card ${tipClasa} ${sedinta.efectuata ? "done" : ""}`}>
+    <li
+      className={`item-card ${tipClasa} ${sedinta.efectuata ? "done" : ""}`}
+      data-testid="item"
+      data-id={sedinta.id}
+    >
       <label className="task-main">
         <input
           type="checkbox"
           checked={sedinta.efectuata}
           onChange={() => onToggle(sedinta.id)}
+          data-testid="item-toggle"
         />
         <div className="item-info">
           <span className="disc">
@@ -36,7 +41,7 @@ export default function SedintaCard({ sedinta, onToggle, onDelete }) {
             </svg>
           </span>
           <div>
-            <h3>{sedinta.titlu}</h3>
+            <h3 data-testid="item-title">{sedinta.titlu}</h3>
             <span className={`badge badge-${sedinta.tip}`}>{eticheta}</span>
           </div>
         </div>
@@ -51,6 +56,7 @@ export default function SedintaCard({ sedinta, onToggle, onDelete }) {
           className="btn-danger"
           onClick={() => onDelete(sedinta.id)}
           aria-label={`Șterge ${sedinta.titlu}`}
+          data-testid="item-delete"
         >
           Șterge
         </button>

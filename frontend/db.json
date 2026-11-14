@@ -29,6 +29,12 @@
       "titlu": "Reeducare posturală globală",
       "efectuata": true,
       "tip": "kinetoterapie"
+    },
+    {
+      "titlu": "Programare test",
+      "tip": "masaj",
+      "efectuata": false,
+      "id": 6
     }
   ]
 }

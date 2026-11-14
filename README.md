@@ -59,6 +59,11 @@ and shows a loading state and an error state.
  npm run api # terminal 1, http://localhost:3001
  npm run dev # terminal 2, http://localhost:5173
 
+## Stage 7: form and validation
+Tasks can be added from the page. The form is controlled and validated,
+and every change (add, toggle, delete) goes to the API before it shows up
+in the list.
+
 ## Status
 - [x] Stage 1: static mockup
 - [x] Stage 2: data logic in JavaScript
@@ -66,7 +71,8 @@ and shows a loading state and an error state.
 - [x] Stage 4: components rendered from data
 - [x] Stage 5: local state and events
 - [x] Stage 6: data from a mock API
-- [ ] Stage 7: form and validation
+- [x] Stage 7: form and validation
+- [ ] Stage 8: routing and detail page
 
 ## Verification table
 

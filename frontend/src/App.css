@@ -384,3 +384,13 @@ body {
   border-radius: 8px;
   padding: 10px 12px;
 }
+
+/* Etapa 7: buton dezactivat cât timp se trimite și marcarea câmpului invalid */
+.item-form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.item-form input[aria-invalid="true"] {
+  border-color: var(--danger);
+}

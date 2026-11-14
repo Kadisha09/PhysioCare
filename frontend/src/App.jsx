@@ -1,10 +1,18 @@
 import { useEffect, useState } from "react";
 import SedintaList from "./components/SedintaList.jsx";
-import { fetchSedinte } from "./api.js";
+import SedintaForm from "./components/SedintaForm.jsx";
+import {
+  createSedinta,
+  deleteSedinta,
+  fetchSedinte,
+  updateSedinta,
+} from "./api.js";
 import "./App.css";
 
 function temaInitiala() {
-  return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  return window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light";
 }
 
 export default function App() {
@@ -31,17 +39,36 @@ export default function App() {
     };
   }, []);
 
-  function handleToggle(id) {
-    setSedinte((prev) =>
-      prev.map((s) => (s.id === id ? { ...s, efectuata: !s.efectuata } : s))
-    );
+  // Întâi serverul, apoi state-ul: pe ecran ajunge doar ce s-a salvat
+  async function handleAdd(sedinta) {
+    const creata = await createSedinta(sedinta);
+    setSedinte((prev) => [...prev, creata]);
   }
 
-  function handleDelete(id) {
-    setSedinte((prev) => prev.filter((s) => s.id !== id));
+  async function handleToggle(id) {
+    const sedinta = sedinte.find((s) => s.id === id);
+    try {
+      const actualizata = await updateSedinta(id, {
+        efectuata: !sedinta.efectuata,
+      });
+      setSedinte((prev) =>
+        prev.map((s) => (s.id === id ? actualizata : s))
+      );
+    } catch (err) {
+      setError(err.message);
+    }
   }
 
-  // Comutare temă 
+  async function handleDelete(id) {
+    try {
+      await deleteSedinta(id);
+      setSedinte((prev) => prev.filter((s) => s.id !== id));
+    } catch (err) {
+      setError(err.message);
+    }
+  }
+
+  // Comutare temă
   function handleTema() {
     const noua = tema === "dark" ? "light" : "dark";
     setTema(noua);
@@ -221,32 +248,22 @@ export default function App() {
       <main className="container">
         <section className="panel panel-form">
           <h2>Adaugă ședință</h2>
-          <form className="item-form" onSubmit={(e) => e.preventDefault()}>
-            <label>
-              Titlu ședință
-              <input type="text" name="titlu" maxLength={100} placeholder="Ex: Recuperare post-entorsă gleznă" />
-            </label>
-            <label>
-              Tip terapie
-              <select name="tip" defaultValue="kinetoterapie">
-                <option value="kinetoterapie">Kinetoterapie</option>
-                <option value="electroterapie">Electroterapie</option>
-                <option value="masaj">Masaj terapeutic</option>
-              </select>
-            </label>
-            <button type="submit">Adaugă</button>
-          </form>
+          <SedintaForm onAdd={handleAdd} />
         </section>
 
         <section className="panel panel-list">
           <h2>Ședințele mele</h2>
-          {loading && <p className="info">Se încarcă ședințele...</p>}
-          {error && (
-            <p className="error">
-              Nu am putut încărca datele: {error}. Rulează <code>npm run api</code>?
+          {loading && (
+            <p className="info" data-testid="loading">
+              Se încarcă ședințele...
             </p>
           )}
-          {!loading && !error && (
+          {error && (
+            <p className="error" data-testid="error">
+              Nu am putut încărca datele: {error}
+            </p>
+          )}
+          {!loading && (
             <SedintaList
               sedinte={sedinte}
               onToggle={handleToggle}
