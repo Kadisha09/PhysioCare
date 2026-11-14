@@ -151,3 +151,16 @@ in the list.
 | S6-R5 | `fetch` only in `api.js`, URL from env | https://github.com/Kadisha09/PhysioCare/blob/b9975d6ed60a34ceef8fa6141640eb9796e96313/frontend/src/api.js#L1-L10, https://github.com/Kadisha09/PhysioCare/blob/b9975d6ed60a34ceef8fa6141640eb9796e96313/frontend/.env.example#L1-L2 | search for `fetch` |
 | S6-R6 | README Stage 6 section + AI log | https://github.com/Kadisha09/PhysioCare/blob/main/README.md, https://github.com/Kadisha09/PhysioCare/blob/main/ai-log/etapa-06.md | read |
 | S6-R7 | commit `"Stage 6"` pushed | https://github.com/Kadisha09/PhysioCare/commit/711026db1bcafb780e33b9897a8880c1f90255f2, https://github.com/Kadisha09/PhysioCare/commit/b9975d6ed60a34ceef8fa6141640eb9796e96313 | commit history |
+
+## Verification table 7
+
+| ID | Requirement | Where (permalink) | How to check |
+| :--- | :--- | :--- | :--- |
+| S7-R1 | controlled form: `value` + `onChange` on every field | https://github.com/Kadisha09/PhysioCare/blob/bddb0e2adf64960655070a5fe2bd602c3a2bdbbf/frontend/src/components/SedintaForm.jsx#L54-L80| read |
+| S7-R2 | empty title shows an error, nothing is sent | https://github.com/Kadisha09/PhysioCare/blob/bddb0e2adf64960655070a5fe2bd602c3a2bdbbf/frontend/src/components/SedintaForm.jsx#L17-L24| submit empty, watch Network |
+| S7-R3 | added item shows in the list and survives refresh | https://github.com/Kadisha09/PhysioCare/blob/bddb0e2adf64960655070a5fe2bd602c3a2bdbbf/frontend/src/App.jsx#L43-L46, https://github.com/Kadisha09/PhysioCare/blob/bddb0e2adf64960655070a5fe2bd602c3a2bdbbf/frontend/src/api.js#L24-L29 | add, refresh |
+| S7-R4 | toggle and delete survive refresh | https://github.com/Kadisha09/PhysioCare/blob/bddb0e2adf64960655070a5fe2bd602c3a2bdbbf/frontend/src/App.jsx#L48-L69 | toggle/delete, refresh |
+| S7-R5 | button disabled while sending, form cleared only on success | https://github.com/Kadisha09/PhysioCare/blob/bddb0e2adf64960655070a5fe2bd602c3a2bdbbf/frontend/src/components/SedintaForm.jsx#L26-L45 | `--delay 3000`; stop API and submit |
+| S7-R6 | `tw.json` and the `data-testid` attributes | https://github.com/Kadisha09/PhysioCare/blob/main/tw.json, https://github.com/Kadisha09/PhysioCare/blob/bddb0e2adf64960655070a5fe2bd602c3a2bdbbf/frontend/src/components/SedintaCard.jsx#L24-L64 | `querySelectorAll` in the console |
+| S7-R7 | README Stage 7 section + AI log |https://github.com/Kadisha09/PhysioCare/blob/main/README.md, https://github.com/Kadisha09/PhysioCare/blob/main/ai-log/etapa-07.md | read |
+| S7-R8 | commit `"Stage 7"` pushed | https://github.com/Kadisha09/PhysioCare/commit/bddb0e2adf64960655070a5fe2bd602c3a2bdbbf| commit history |
