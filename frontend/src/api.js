@@ -21,6 +21,10 @@ export function fetchSedinte() {
   return request("/sedinte");
 }
 
+export function fetchSedinta(id) {
+  return request(`/sedinte/${id}`);
+}
+
 export function createSedinta(sedinta) {
   return request("/sedinte", {
     method: "POST",

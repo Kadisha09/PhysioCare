@@ -1,0 +1,310 @@
+/* Stiluri globale: variabile, elemente de bază, clase comune.
+   Stilurile de componentă stau în fișiere *.module.css */
+
+* {
+  box-sizing: border-box;
+}
+
+#root {
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  text-align: left !important;
+}
+
+/* TEMA LUMINOASĂ */
+:root {
+  --bg: #f5f2eb;
+  --card: #fffdf9;
+  --text: #1c2724;
+  --muted: #667069;
+  --accent: #27483c;
+  --accent-dark: #1a3329;
+  --accent-soft: #e6ede8;
+  --border: #e3ded2;
+  --on-accent: #ffffff;
+  --input-bg: #f3efe6;
+  --copper: #a85a30;
+  --danger: #b93838;
+  --error-bg: #fdf2f8;
+  --error-border: #fbcfe8;
+
+  --sky-1: #3b86c6;
+  --sky-2: #fdeec3;
+  --stars: none;
+  --on-sky: #ffffff;
+  --sun: #ffd84a;
+  --sun-glow: #fff3b0;
+  --sun-ray: #ffe27a;
+
+  --far: #a9bfd0;
+  --mid: #7d9d9b;
+  --mid2: #5f8574;
+  --snow: #ffffff;
+  --lake: #3fa7b0;
+  --lake-dark: #2b7f8c;
+  --ground: #3f7a4c;
+  --pine: #1f4636;
+
+  --wood: #9a6a3b;
+  --wood-dark: #6e4626;
+  --roof: #7a3b2e;
+  --win: #ffd98a;
+
+  --bear: #6f4527;
+  --bear-dark: #46281a;
+  --bear-light: #a07049;
+  --muzzle: #c7a283;
+  --fox: #d9742f;
+  --fox-dark: #2a1a12;
+
+  --car: #c9772a;
+  --tire: #1c1f22;
+  --hub: #a9afb3;
+  --rack: #3a3f44;
+  --glass-win: #e3eff4;
+
+  --footer: #1a3329;
+  --disc: #f5f2eb;
+
+  --badge-kinetoterapie: #2f5d4b;
+  --badge-electroterapie: #2f7f8c;
+  --badge-masaj: #a85a30;
+  --on-badge: #ffffff;
+
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+}
+
+/* TEMA SISTEMULUI */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0e1513;
+    --card: #151e1b;
+    --text: #e6ece8;
+    --muted: #9aaba2;
+    --accent: #8fc9ad;
+    --accent-dark: #0f1f19;
+    --accent-soft: #1c2b25;
+    --border: #26362f;
+    --on-accent: #0a1a13;
+    --input-bg: #1a2622;
+    --copper: #e0955f;
+    --danger: #e26d6d;
+    --error-bg: #3b1d2e;
+    --error-border: #6b2a4a;
+
+    --sky-1: #070d18;
+    --sky-2: #1c2c3c;
+    --stars:
+      radial-gradient(1.5px 1.5px at 8% 12%, #fff, transparent),
+      radial-gradient(1.5px 1.5px at 30% 26%, #fff, transparent),
+      radial-gradient(1px 1px at 46% 10%, #fff, transparent),
+      radial-gradient(1.5px 1.5px at 64% 20%, #fff, transparent),
+      radial-gradient(1px 1px at 80% 12%, #fff, transparent),
+      radial-gradient(1.5px 1.5px at 93% 28%, #fff, transparent);
+    --sun: #e9eef5;
+    --sun-glow: #7f95bd;
+    --sun-ray: transparent;
+
+    --far: #1f3044;
+    --mid: #183230;
+    --mid2: #12261f;
+    --snow: #cfd9e6;
+    --lake: #146a72;
+    --lake-dark: #0b3f4a;
+    --ground: #15301f;
+    --pine: #0f2a1f;
+
+    --wood: #6b4a2c;
+    --wood-dark: #432b17;
+    --roof: #4a2a24;
+
+    --bear: #5a3820;
+    --muzzle: #a98366;
+    --car: #a85f1f;
+
+    --footer: #0f1f19;
+    --disc: #1a2622;
+    --badge-kinetoterapie: #77c9a0;
+    --badge-electroterapie: #6cc0ec;
+    --badge-masaj: #f0a068;
+    --on-badge: #0e1513;
+  }
+}
+
+/* TEMA ÎNTUNECATĂ ALEASĂ EXPLICIT DIN BUTON */
+:root[data-theme="dark"] {
+  --bg: #0e1513;
+  --card: #151e1b;
+  --text: #e6ece8;
+  --muted: #9aaba2;
+  --accent: #8fc9ad;
+  --accent-dark: #0f1f19;
+  --accent-soft: #1c2b25;
+  --border: #26362f;
+  --on-accent: #0a1a13;
+  --input-bg: #1a2622;
+  --copper: #e0955f;
+  --danger: #e26d6d;
+  --error-bg: #3b1d2e;
+  --error-border: #6b2a4a;
+
+  --sky-1: #070d18;
+  --sky-2: #1c2c3c;
+  --stars:
+    radial-gradient(1.5px 1.5px at 8% 12%, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 30% 26%, #fff, transparent),
+    radial-gradient(1px 1px at 46% 10%, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 64% 20%, #fff, transparent),
+    radial-gradient(1px 1px at 80% 12%, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 93% 28%, #fff, transparent);
+  --sun: #e9eef5;
+  --sun-glow: #7f95bd;
+  --sun-ray: transparent;
+
+  --far: #1f3044;
+  --mid: #183230;
+  --mid2: #12261f;
+  --snow: #cfd9e6;
+  --lake: #146a72;
+  --lake-dark: #0b3f4a;
+  --ground: #15301f;
+  --pine: #0f2a1f;
+
+  --wood: #6b4a2c;
+  --wood-dark: #432b17;
+  --roof: #4a2a24;
+
+  --bear: #5a3820;
+  --muzzle: #a98366;
+  --car: #a85f1f;
+
+  --footer: #0f1f19;
+  --disc: #1a2622;
+  --badge-kinetoterapie: #77c9a0;
+  --badge-electroterapie: #6cc0ec;
+  --badge-masaj: #f0a068;
+  --on-badge: #0e1513;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+a {
+  color: var(--accent);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.panel {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 24px 26px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.panel h2 {
+  margin: 0 0 16px;
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1.35rem;
+  color: var(--accent);
+}
+
+.info {
+  color: var(--muted);
+}
+
+.empty {
+  margin: 0;
+  padding: 18px;
+  text-align: center;
+  color: var(--muted);
+  border: 1px dashed var(--border);
+  border-radius: 12px;
+}
+
+.error {
+  color: var(--danger);
+  background: var(--error-bg);
+  border: 1px solid var(--error-border);
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+
+.btn {
+  font: inherit;
+  font-weight: 600;
+  padding: 11px 28px;
+  border: none;
+  border-radius: 10px;
+  background: var(--accent);
+  color: var(--on-accent);
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.btn:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-danger {
+  border: 1px solid var(--danger);
+  background: transparent;
+  color: var(--danger);
+  border-radius: 8px;
+  padding: 6px 12px;
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn-danger:hover {
+  background: var(--danger);
+  color: #fff;
+}
+
+.badge {
+  display: inline-block;
+  padding: 1px 10px;
+  border-radius: 999px;
+  font-size: 0.74rem;
+  color: var(--on-badge);
+  font-weight: 600;
+}
+
+.badge-kinetoterapie {
+  background: var(--badge-kinetoterapie);
+}
+
+.badge-electroterapie {
+  background: var(--badge-electroterapie);
+}
+
+.badge-masaj {
+  background: var(--badge-masaj);
+}
+
+@media (max-width: 700px) {
+  .panel {
+    padding: 20px 18px;
+  }
+}
