@@ -1,0 +1,153 @@
+.header {
+  position: relative;
+  display: grid;
+  min-height: clamp(320px, 38vw, 430px);
+  background: var(--stars), linear-gradient(180deg, var(--sky-1), var(--sky-2));
+  overflow: hidden;
+}
+
+.scene {
+  grid-area: 1 / 1;
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow: visible;
+}
+
+.headerText {
+  grid-area: 1 / 1;
+  align-self: start;
+  justify-self: start;
+  max-width: 560px;
+  margin: 32px 6%;
+  color: var(--on-sky);
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.35);
+  z-index: 1;
+}
+
+.headerText h1 {
+  margin: 0 0 6px;
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: clamp(2rem, 5.5vw, 3.2rem);
+  letter-spacing: 0.5px;
+  line-height: 1.1;
+}
+
+.tagline {
+  margin: 0 0 14px;
+  font-size: 1.05rem;
+}
+
+.topBar {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.nav {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  padding: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+  background: rgba(20, 35, 30, 0.45);
+  backdrop-filter: blur(4px);
+}
+
+.link {
+  color: #fff;
+  text-decoration: none;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  opacity: 0.85;
+  transition: background 0.2s, opacity 0.2s;
+}
+
+.link:hover {
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.active {
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.28);
+}
+
+.themeToggle {
+  padding: 6px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 999px;
+  background: rgba(20, 35, 30, 0.45);
+  color: #fff;
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  transition: background 0.2s, transform 0.15s;
+}
+
+.themeToggle:hover {
+  background: rgba(20, 35, 30, 0.7);
+  transform: translateY(-1px);
+}
+
+.main {
+  position: relative;
+  z-index: 2;
+  max-width: 1080px;
+  margin: 28px auto;
+  padding: 0 20px;
+}
+
+.footer {
+  margin-top: 48px;
+  padding: 22px 16px 26px;
+  text-align: center;
+  color: #e9eee9;
+  background: var(--footer);
+}
+
+.footer p {
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+.motto {
+  margin-top: 4px;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1rem;
+  color: #8fc9ad;
+}
+
+@media (max-width: 700px) {
+  .header {
+    min-height: 0;
+  }
+
+  .headerText {
+    grid-area: 1 / 1;
+    margin: 62px 6% 8px;
+  }
+
+  .scene {
+    grid-area: 2 / 1;
+    height: auto;
+    aspect-ratio: 1000 / 380;
+  }
+
+  .main {
+    margin: 20px auto 28px;
+    padding: 0 14px;
+  }
+}

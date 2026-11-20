@@ -1,0 +1,41 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.form input,
+.form select {
+  font: inherit;
+  font-weight: 400;
+  color: var(--text);
+  padding: 10px 14px;
+  background: var(--input-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.form input:hover,
+.form select:hover {
+  border-color: var(--accent);
+}
+
+.form input:focus,
+.form select:focus {
+  border-color: var(--accent);
+  outline: none;
+}
+
+.form input[aria-invalid="true"] {
+  border-color: var(--danger);
+}

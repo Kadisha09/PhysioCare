@@ -64,6 +64,10 @@ Tasks can be added from the page. The form is controlled and validated,
 and every change (add, toggle, delete) goes to the API before it shows up
 in the list.
 
+## Stage 8: routing and detail page
+Three pages behind React Router: the list, a detail page at `/tasks/:id`,
+and an about page, plus a 404 page. Component styles moved to CSS Modules.
+
 ## Status
 - [x] Stage 1: static mockup
 - [x] Stage 2: data logic in JavaScript
@@ -72,7 +76,8 @@ in the list.
 - [x] Stage 5: local state and events
 - [x] Stage 6: data from a mock API
 - [x] Stage 7: form and validation
-- [ ] Stage 8: routing and detail page
+- [x] Stage 8: routing and detail page
+- [ ] Stage 9: own backend with Express
 
 ## Verification table
 

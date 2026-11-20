@@ -1,0 +1,141 @@
+.card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--badge-kinetoterapie);
+  border-radius: 14px;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.kinetoterapie {
+  border-left-color: var(--badge-kinetoterapie);
+}
+
+.electroterapie {
+  border-left-color: var(--badge-electroterapie);
+}
+
+.masaj {
+  border-left-color: var(--badge-masaj);
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex: 1;
+}
+
+.main input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.title {
+  display: block;
+  margin: 0 0 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.title:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.disc {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  flex: none;
+  border-radius: 50%;
+  background: var(--disc);
+  border: 1px solid var(--border);
+}
+
+.disc svg {
+  width: 26px;
+  height: 26px;
+}
+
+.kinetoterapie .disc {
+  color: var(--badge-kinetoterapie);
+}
+
+.electroterapie .disc {
+  color: var(--badge-electroterapie);
+}
+
+.masaj .disc {
+  color: var(--badge-masaj);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.status {
+  font-size: 0.85rem;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.status::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 8px;
+  border-radius: 50%;
+  background: var(--copper);
+}
+
+.done {
+  opacity: 0.75;
+}
+
+.done .title {
+  text-decoration: line-through;
+  color: var(--muted);
+}
+
+.done .status {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.done .status::before {
+  content: "✓";
+  width: auto;
+  height: auto;
+  background: none;
+  margin-right: 6px;
+}
+
+@media (max-width: 700px) {
+  .card {
+    flex-wrap: wrap;
+  }
+}

@@ -1,54 +1,47 @@
-const CLASA_TIP = {
-  kinetoterapie: "t-kineto",
-  masaj: "t-masaj",
-  electroterapie: "t-electro",
-};
-
-const ETICHETA_TIP = {
-  kinetoterapie: "Kinetoterapie",
-  masaj: "Masaj terapeutic",
-  electroterapie: "Electroterapie",
-};
-
-const ICON_TIP = {
-  kinetoterapie: "#i-labuta",
-  masaj: "#i-vulpe",
-  electroterapie: "#i-fulger",
-};
+import { Link } from "react-router-dom";
+import { ETICHETA_TIP, ICON_TIP } from "../constants.js";
+import styles from "./SedintaCard.module.css";
 
 export default function SedintaCard({ sedinta, onToggle, onDelete }) {
-  const tipClasa = CLASA_TIP[sedinta.tip] || "";
+  const tipClasa = styles[sedinta.tip] || "";
   const iconHref = ICON_TIP[sedinta.tip] || "#i-labuta";
   const eticheta = ETICHETA_TIP[sedinta.tip] || sedinta.tip;
 
   return (
     <li
-      className={`item-card ${tipClasa} ${sedinta.efectuata ? "done" : ""}`}
+      className={`${styles.card} ${tipClasa} ${sedinta.efectuata ? styles.done : ""}`}
       data-testid="item"
       data-id={sedinta.id}
     >
-      <label className="task-main">
+      <div className={styles.main}>
         <input
           type="checkbox"
           checked={sedinta.efectuata}
           onChange={() => onToggle(sedinta.id)}
+          aria-label={`Marchează ${sedinta.titlu}`}
           data-testid="item-toggle"
         />
-        <div className="item-info">
-          <span className="disc">
+        <div className={styles.info}>
+          <span className={styles.disc}>
             <svg aria-hidden="true">
               <use href={iconHref} />
             </svg>
           </span>
           <div>
-            <h3 data-testid="item-title">{sedinta.titlu}</h3>
+            <Link
+              to={`/sedinte/${sedinta.id}`}
+              className={styles.title}
+              data-testid="item-link"
+            >
+              {sedinta.titlu}
+            </Link>
             <span className={`badge badge-${sedinta.tip}`}>{eticheta}</span>
           </div>
         </div>
-      </label>
+      </div>
 
-      <div className="card-actions">
-        <span className="status">
+      <div className={styles.actions}>
+        <span className={styles.status}>
           {sedinta.efectuata ? "Efectuată" : "Programată"}
         </span>
         <button

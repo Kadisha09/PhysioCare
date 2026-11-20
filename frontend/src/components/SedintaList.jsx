@@ -1,4 +1,5 @@
 import SedintaCard from "./SedintaCard.jsx";
+import styles from "./SedintaList.module.css";
 
 export default function SedintaList({ sedinte, onToggle, onDelete }) {
   if (!sedinte || sedinte.length === 0) {
@@ -10,7 +11,7 @@ export default function SedintaList({ sedinte, onToggle, onDelete }) {
   }
 
   return (
-    <ul className="item-list">
+    <ul className={styles.list}>
       {sedinte.map((sedinta) => (
         <SedintaCard
           key={sedinta.id}

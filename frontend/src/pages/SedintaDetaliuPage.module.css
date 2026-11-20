@@ -1,0 +1,36 @@
+.detail {
+  max-width: 640px;
+}
+
+.back {
+  display: inline-block;
+  margin-bottom: 14px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.back:hover {
+  text-decoration: underline;
+}
+
+.done {
+  text-decoration: line-through;
+  color: var(--muted) !important;
+}
+
+.fields {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 10px 18px;
+  margin: 0;
+}
+
+.fields dt {
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.fields dd {
+  margin: 0;
+}

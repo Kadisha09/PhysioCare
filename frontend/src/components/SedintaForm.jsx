@@ -1,10 +1,6 @@
 import { useState } from "react";
-
-const TIPURI_TERAPIE = [
-  { value: "kinetoterapie", label: "Kinetoterapie" },
-  { value: "electroterapie", label: "Electroterapie" },
-  { value: "masaj", label: "Masaj terapeutic" },
-];
+import { TIPURI_TERAPIE } from "../constants.js";
+import styles from "./SedintaForm.module.css";
 
 const TITLU_MAX = 100;
 
@@ -24,7 +20,7 @@ export default function SedintaForm({ onAdd }) {
   }
 
   async function handleSubmit(e) {
-    e.preventDefault(); // oprește reîncărcarea paginii
+    e.preventDefault();
     const mesaj = valideaza();
     if (mesaj) {
       setEroare(mesaj);
@@ -46,7 +42,7 @@ export default function SedintaForm({ onAdd }) {
 
   return (
     <form
-      className="item-form"
+      className={styles.form}
       onSubmit={handleSubmit}
       noValidate
       data-testid="form"
@@ -85,7 +81,12 @@ export default function SedintaForm({ onAdd }) {
         </p>
       )}
 
-      <button type="submit" disabled={trimite} data-testid="form-submit">
+      <button
+        type="submit"
+        className="btn"
+        disabled={trimite}
+        data-testid="form-submit"
+      >
         {trimite ? "Se salvează..." : "Adaugă"}
       </button>
     </form>
