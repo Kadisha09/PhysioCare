@@ -169,3 +169,16 @@ and an about page, plus a 404 page. Component styles moved to CSS Modules.
 | S7-R6 | `tw.json` and the `data-testid` attributes | https://github.com/Kadisha09/PhysioCare/blob/main/tw.json, https://github.com/Kadisha09/PhysioCare/blob/bddb0e2adf64960655070a5fe2bd602c3a2bdbbf/frontend/src/components/SedintaCard.jsx#L24-L64 | `querySelectorAll` in the console |
 | S7-R7 | README Stage 7 section + AI log |https://github.com/Kadisha09/PhysioCare/blob/main/README.md, https://github.com/Kadisha09/PhysioCare/blob/main/ai-log/etapa-07.md | read |
 | S7-R8 | commit `"Stage 7"` pushed | https://github.com/Kadisha09/PhysioCare/commit/bddb0e2adf64960655070a5fe2bd602c3a2bdbbf| commit history |
+
+## Verification table 8
+
+| ID | Requirement | Where (permalink) | How to check |
+| :--- | :--- | :--- | :--- |
+| S8-R1 | header navigation changes page without reload | https://github.com/Kadisha09/PhysioCare/blob/370bd843138b382aff3231fd14010534da1f842a/frontend/src/App.jsx#L10-L17, https://github.com/Kadisha09/PhysioCare/blob/370bd843138b382aff3231fd14010534da1f842a/frontend/src/components/Layout.jsx#L254-L261 | click links, watch Network |
+| S8-R2 | click on an item opens its detail page | https://github.com/Kadisha09/PhysioCare/blob/370bd843138b382aff3231fd14010534da1f842a/frontend/src/components/SedintaCard.jsx#L31-L37, https://github.com/Kadisha09/PhysioCare/blob/370bd843138b382aff3231fd14010534da1f842a/frontend/src/pages/SedintaDetaliuPage.jsx#L7-L32 | click a title |
+| S8-R3 | refresh on the detail URL works; missing id shows an error | https://github.com/Kadisha09/PhysioCare/blob/370bd843138b382aff3231fd14010534da1f842a/frontend/src/pages/SedintaDetaliuPage.jsx#L42-L51 | refresh `/sedinte/1`, open `/sedinte/999` |
+| S8-R4 | unknown URL shows the app 404 page | https://github.com/Kadisha09/PhysioCare/blob/370bd843138b382aff3231fd14010534da1f842a/frontend/src/App.jsx#L15, https://github.com/Kadisha09/PhysioCare/blob/370bd843138b382aff3231fd14010534da1f842a/frontend/src/pages/NotFoundPage.jsx#L3-L10 | open `/ceva` |
+| S8-R5 | each component has its `.module.css`; `index.css` only shared styles | https://github.com/Kadisha09/PhysioCare/tree/main/frontend/src/components, https://github.com/Kadisha09/PhysioCare/tree/main/frontend/src/pages, https://github.com/Kadisha09/PhysioCare/blob/main/frontend/src/index.css | read |
+| S8-R6 | `data-testid` attributes from tables 7.3 and 8.2; detail route `/<resource>/:id` | https://github.com/Kadisha09/PhysioCare/blob/370bd843138b382aff3231fd14010534da1f842a/frontend/src/components/Layout.jsx#L254, https://github.com/Kadisha09/PhysioCare/blob/370bd843138b382aff3231fd14010534da1f842a/frontend/src/components/SedintaCard.jsx#L34,https://github.com/Kadisha09/PhysioCare/blob/370bd843138b382aff3231fd14010534da1f842a/frontend/src/pages/SedintaDetaliuPage.jsx#L54-L60, https://github.com/Kadisha09/PhysioCare/blob/370bd843138b382aff3231fd14010534da1f842a/frontend/src/pages/NotFoundPage.jsx#L5| `querySelector` in the console |
+| S8-R7 | README Stage 8 section + AI log |https://github.com/Kadisha09/PhysioCare/blob/main/README.md, https://github.com/Kadisha09/PhysioCare/blob/main/ai-log/etapa-08.md | read |
+| S8-R8 | commit `"Stage 8"` pushed |https://github.com/Kadisha09/PhysioCare/commit/5c6a97f4b7d2d56d2689eb1b4ce9dad7af92b70f | commit history |
